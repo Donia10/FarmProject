@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Courses</string>
+    <string-array name="courses">
+        <item>Image Processing</item>
+        <item>Data Communication</item>
+        <item>Operating System</item>
+        <item>Dynamic Language</item>
+        <item>Data Mining</item>
+
+    </string-array>
+</resources>
