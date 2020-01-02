@@ -40,12 +40,12 @@ public class MainActivity extends AppCompatActivity implements  AdapterView.OnIt
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setTitleTextColor(Color.WHITE);
 
+
         Spinner spinner = findViewById(R.id.Courses);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.courses, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-
 
         /* open new activity  **/
 
@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements  AdapterView.OnIt
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-
     }
 
     @Override
@@ -75,8 +74,8 @@ public class MainActivity extends AppCompatActivity implements  AdapterView.OnIt
 
     public void openActivity2() {
         Intent intent = new Intent(this, Main2Activity.class);
-       Spinner spinner = findViewById(R.id.Courses);
-      String text = spinner.getSelectedItem().toString();
+        Spinner spinner = findViewById(R.id.Courses);
+        String text = spinner.getSelectedItem().toString();
         intent.putExtra(EXTRA_TEXT, text);
         startActivity(intent);
 

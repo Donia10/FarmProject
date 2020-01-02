@@ -29,7 +29,6 @@ public class Main2Activity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setTitleTextColor(Color.WHITE);
 
-
         // code of material button
         Button material= (Button) findViewById(R.id.material);
         material.setOnClickListener(new View.OnClickListener() {
