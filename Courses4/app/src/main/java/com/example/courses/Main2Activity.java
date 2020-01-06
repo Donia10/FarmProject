@@ -22,7 +22,7 @@ public class Main2Activity extends AppCompatActivity {
         Intent intent =getIntent();
         String text = intent.getStringExtra(MainActivity.EXTRA_TEXT);
 
-
+        //toolbar
         Toolbar toolbar= (Toolbar) findViewById(R.id.my_toolbar2);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(text);

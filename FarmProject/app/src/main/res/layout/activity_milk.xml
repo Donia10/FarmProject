@@ -45,6 +45,7 @@
             android:ems="10"
             android:padding="5dp"
             android:inputType="number"
+            android:bufferType="editable"
             android:hint="كمية الحليب فى الحلبه الاولى"
             android:visibility="gone"/>
         <EditText
@@ -56,6 +57,7 @@
             android:padding="5dp"
             android:layout_margin="5dp"
             android:inputType="number"
+            android:bufferType="editable"
             android:hint="كمية الحليب فى الحلبه الثانية"
             android:visibility="gone"/>
         <EditText
@@ -67,11 +69,12 @@
             android:padding="5dp"
             android:layout_margin="5dp"
             android:inputType="number"
+            android:bufferType="editable"
             android:hint="كمية الحليب فى الحلبه الثالثة"
             android:visibility="gone"/>
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/fat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -79,10 +82,11 @@
             android:ems="10"
             android:hint="نسبة الدهن"
             android:inputType="number"
+            android:bufferType="editable"
             android:padding="5dp"/>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/protein"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -90,10 +94,11 @@
         android:padding="5dp"
         android:layout_margin="5dp"
         android:background="@drawable/border"
-        android:inputType="number" />
+        android:inputType="number"
+        android:bufferType="editable" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@android:dimen/app_icon_size"
