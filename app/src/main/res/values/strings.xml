@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">FarmProject</string>
+
+    <string-array name="items">
+        <item>عدد مرات الحلب اليومية</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        </string-array>
+
+</resources>
+
