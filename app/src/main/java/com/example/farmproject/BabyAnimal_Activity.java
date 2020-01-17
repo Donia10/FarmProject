@@ -59,8 +59,21 @@ public class BabyAnimal_Activity extends AppCompatActivity implements AdapterVie
         sontype.setAdapter(adapter);                          //spinner2
         sontype.setOnItemSelectedListener(this);
 
-      BabyAnimal_Json babyanimal=new BabyAnimal_Json(type.getSelectedItem().toString();
-      BabyAnimal_Json babyanimal2=new BabyAnimal_Json(sontype.getSelectedItem().toString();
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                 //BabyAnimal_Json babyanimal=new BabyAnimal_Json(type.getSelectedItem().toString());
+                // BabyAnimal_Json babyanimal2=new BabyAnimal_Json(sontype.getSelectedItem().toString());
+
+               // mAnimalsDatabaseReference.push().child("baby").setValue(babyanimal);
+
+            }
+        });
+
+
+
 
 
     }
