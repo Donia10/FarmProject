@@ -64,10 +64,10 @@ public class BabyAnimal_Activity extends AppCompatActivity implements AdapterVie
             @Override
             public void onClick(View v) {
 
-                 //BabyAnimal_Json babyanimal=new BabyAnimal_Json(type.getSelectedItem().toString());
-                // BabyAnimal_Json babyanimal2=new BabyAnimal_Json(sontype.getSelectedItem().toString());
+                 BabyAnimal_Json babyanimal=new BabyAnimal_Json(type.getSelectedItem().toString());
+                 BabyAnimal_Json babyanimal2=new BabyAnimal_Json(sontype.getSelectedItem().toString());
 
-               // mAnimalsDatabaseReference.push().child("baby").setValue(babyanimal);
+                    mAnimalsDatabaseReference.push().child("baby").setValue(babyanimal);
 
             }
         });
