@@ -68,6 +68,8 @@ public class BabyAnimal_Activity extends AppCompatActivity implements AdapterVie
                  BabyAnimal_Json babyanimal2=new BabyAnimal_Json(sontype.getSelectedItem().toString());
 
                     mAnimalsDatabaseReference.push().child("baby").setValue(babyanimal);
+                    mAnimalsDatabaseReference.push().child("baby").setValue(babyanimal2);
+
 
             }
         });
