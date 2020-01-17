@@ -6,7 +6,28 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
-        </string-array>
+    </string-array>
+
+    <!--  Baby spinners -->
+    <string-array name="Spinner_items">Spinner_items
+        <item> نوع الولادة </item>
+        <item> طبيعية </item>
+        <item>بمساعدة طبيب بيطري  </item>
+    </string-array>
+
+    <string-array name="Spinner2_items">Spinner2_items
+        <item> نوع المولود </item>
+        <item> ذكر </item>
+        <item>انثي </item>
+    </string-array>
+
+    <string-array name="Spinner3_items">Spinner3_items
+        <item> نوع الفقد </item>
+        <item> نافق </item>
+        <item> مباع </item>
+        <item>ذبح </item>
+
+    </string-array>
 
 </resources>
 
