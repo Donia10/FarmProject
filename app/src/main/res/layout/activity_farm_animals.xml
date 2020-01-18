@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FarmAnimals">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tl_animals"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:gravity="center"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/searchId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:drawableLeft="@drawable/ic_search_black_24dp"
+        android:gravity="start"
+        android:background="@drawable/border"
+        android:layout_margin="@dimen/fui_auth_method_button_margin"
+        android:hint="إدخل رقم الحيوان"
+        android:textSize="@dimen/fui_auth_method_button_drawablePadding"
+        android:padding="@dimen/fui_auth_method_button_margin" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:transcriptMode="alwaysScroll"
+        android:layout_gravity="center">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

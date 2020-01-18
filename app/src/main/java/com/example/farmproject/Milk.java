@@ -47,6 +47,7 @@ public class Milk extends AppCompatActivity implements AdapterView.OnItemSelecte
         getSupportActionBar().setTitle("كمية إدرار اللبن");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setTitleTextColor(Color.WHITE);
+
         //spinner
         final Spinner spinner=findViewById(R.id.spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -87,7 +88,6 @@ public class Milk extends AppCompatActivity implements AdapterView.OnItemSelecte
             }
         });
 
-
     }
 
     @Override
@@ -119,13 +119,9 @@ public class Milk extends AppCompatActivity implements AdapterView.OnItemSelecte
             milkTheFirstTime.setVisibility(View.GONE);
             milkTheSecondTime.setVisibility(View.GONE);
             milkTheThirdTime.setVisibility(View.GONE);
-
-
         }
     }
-
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
     }
 }
