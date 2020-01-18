@@ -11,7 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_keyboard_arrow_left_black_24dp"
-            android:drawableRight="@drawable/laanimal"
+
             android:gravity="center"
             android:background="@color/white"
             android:textSize="18dp"
