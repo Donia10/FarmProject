@@ -37,6 +37,5 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha01'
 
 
-
 }
 apply plugin: 'com.google.gms.google-services'
