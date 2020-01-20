@@ -9,8 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FarmGroup"></activity>
-        <activity android:name=".Milk" />
+
+        <activity android:name=".BabyAnimal_Activity"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".DataAnimal"
+            android:parentActivityName=".FarmAnimals"></activity>
+        <activity android:name=".FarmAnimals"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".Milk"
+            android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

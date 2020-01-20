@@ -1,15 +1,13 @@
 package com.example.farmproject;
 
 import java.util.List;
-
 public class BabyAnimal_Json {
+
     public BabyAnimal_Json(String toString) {
-    }                  //jason baby animal class
-
+        //jason baby animal class
+    }
     public class Baby {            // type of baby
-
         private String type1;
-
         public Baby(String type1) {
             this.type1 = type1;
         }
@@ -23,8 +21,6 @@ public class BabyAnimal_Json {
         }
 
     }
-
-
     public class BabyAnimal {
 
 
@@ -41,15 +37,9 @@ public class BabyAnimal_Json {
         public void setNewBabyAnimal(NewBabyAnimal newBabyAnimal) {
             this.newBabyAnimal = newBabyAnimal;
         }
-
     }
 
-
-
     public class NewBabyAnimal {
-
-
-
         private String birthDay;
 
         private String fatherId;
@@ -62,9 +52,7 @@ public class BabyAnimal_Json {
             this.operation = operation;
             this.baby = baby;
         }
-
         private String motherId;
-
         private String babyId;
 
         private List<Operation> operation = null;
@@ -120,10 +108,7 @@ public class BabyAnimal_Json {
         }
 
     }
-
-
     public class Operation {                // type of operation
-
 
         private String type2;
 
@@ -140,6 +125,4 @@ public class BabyAnimal_Json {
         }
 
     }
-
 }
-

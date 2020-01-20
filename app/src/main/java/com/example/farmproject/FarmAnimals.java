@@ -74,7 +74,6 @@ public class FarmAnimals extends AppCompatActivity {
         animalsAdapter=new AnimalsAdapter(f,this);
         recyclerView.setAdapter(animalsAdapter);
 
-
     }
     private void filter(String text){
         ArrayList<FarmAnimal> filteredList=new ArrayList<>();
