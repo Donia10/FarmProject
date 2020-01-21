@@ -6,22 +6,35 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FarmAnimals extends AppCompatActivity {
 
+    private FirebaseDatabase firebaseDatabse;
+    private DatabaseReference databaseRef;
     private RecyclerView recyclerView;
     private AnimalsAdapter animalsAdapter;
+    private ChildEventListener childEventListener;
 
     private List<FarmAnimal>f=new ArrayList<>();
+    private List<String> ss=new ArrayList<>();
 
     EditText search;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +42,18 @@ public class FarmAnimals extends AppCompatActivity {
         setContentView(R.layout.activity_farm_animals);
 
         //toolbar
-        Toolbar toolbar_animals=(Toolbar) findViewById(R.id.tl_animals);
+        Toolbar toolbar_animals = (Toolbar) findViewById(R.id.tl_animals);
         setSupportActionBar(toolbar_animals);
         getSupportActionBar().setTitle("قطيع المزرعة");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar_animals.setTitleTextColor(Color.WHITE);
 
-        search=findViewById(R.id.searchId);
+        //firebase objects
+        firebaseDatabse=FirebaseDatabase.getInstance();
+        databaseRef=firebaseDatabse.getReference().child("animals");
+
+        //search EditText
+        search = findViewById(R.id.searchId);
         search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -46,6 +64,7 @@ public class FarmAnimals extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
             }
+
 
             @Override
             public void afterTextChanged(Editable s) {
@@ -64,6 +83,7 @@ public class FarmAnimals extends AppCompatActivity {
         // animalsAdapter =new AnimalsAdapter(this,R.layout.item_animal,farmAnimal);
         animalsAdapter=new AnimalsAdapter(this,R.layout.item_animal,farmAnimal);
         listView.setAdapter(animalsAdapter);**/
+       /*
         f.add(new FarmAnimal("واحد"));
         f.add(new FarmAnimal("اثنان "));
         f.add(new FarmAnimal("2"));
@@ -72,9 +92,57 @@ public class FarmAnimals extends AppCompatActivity {
         recyclerView=findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         animalsAdapter=new AnimalsAdapter(f,this);
+        recyclerView.setAdapter(animalsAdapter);**/
+
+
+/*
+        animalsAdapter=new AnimalsAdapter(f,this);
+        recyclerView=findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(animalsAdapter);**/
+
+
+        databaseRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                String key =dataSnapshot.getKey();
+                ss.add(key);
+                animalsAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+        recyclerView=findViewById(R.id.recyclerView);
+        animalsAdapter=new AnimalsAdapter(ss,this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(animalsAdapter);
 
+
     }
+
+
     private void filter(String text){
         ArrayList<FarmAnimal> filteredList=new ArrayList<>();
         for(FarmAnimal item :f){
@@ -84,5 +152,7 @@ public class FarmAnimals extends AppCompatActivity {
         }
         animalsAdapter.filterList(filteredList);
     }
+
+
 
 }

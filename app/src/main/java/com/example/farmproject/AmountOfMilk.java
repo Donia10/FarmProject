@@ -7,6 +7,9 @@ public class AmountOfMilk {
     private String fatPercentage;
     private String proteinRatio;
 
+    public AmountOfMilk() {
+    }
+
     public AmountOfMilk(String milkFirstTime, String milkSecondTime, String milkThirdTime, String fatPercentage, String proteinRatio) {
         this.milkFirstTime = milkFirstTime;
         this.milkSecondTime = milkSecondTime;

@@ -73,7 +73,7 @@ public class Milk extends AppCompatActivity implements AdapterView.OnItemSelecte
                // mAnimalsDatabaseReference.push().setValue(milkMap);
 
                 //create milk into id without Map
-                mAnimalsDatabaseReference.push().child("milk").setValue(amountOfMilk);
+                mAnimalsDatabaseReference.child("1").child("milk").setValue(amountOfMilk);
 
                 //mAnimalsDatabaseReference.setValue(amountOfMilk);
               // mAnimalsDatabaseReference.push().setValue(amountOfMilk);

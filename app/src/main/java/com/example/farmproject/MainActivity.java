@@ -2,31 +2,62 @@ package com.example.farmproject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {           //splash activity
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-    private final int SPLASH_DISPLAY_LENGTH = 2000;
+public class MainActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    Button milk;
+    Button farmAnimals;
+
+    //firebase instance object
+    public FirebaseDatabase mFirebaseDatabase;
+    public DatabaseReference mAnimalsDatabaseReference;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /* New Handler to start the Menu-Activity
-         * and close this Splash-Screen after some seconds.*/
-        new Handler().postDelayed(new Runnable(){
+        /*//firebase
+        mFirebaseDatabase=FirebaseDatabase.getInstance();
+        mAnimalsDatabaseReference=mFirebaseDatabase.getReference().child("Animals");
+        **/
+        //objects
+        milk=findViewById(R.id.milk);
+        milk.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
-                /* Create an Intent that will start the Menu-Activity. */
-                Intent mainIntent = new Intent(MainActivity .this, FarmGroup.class);
-                MainActivity .this.startActivity(mainIntent);
-                MainActivity .this.finish();
+            public void onClick(View v) {
+                openActivityMilk();
             }
-        }, SPLASH_DISPLAY_LENGTH);
+        });
+
+        farmAnimals=findViewById(R.id.farm_animals);
+        farmAnimals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivityFarmAnimals();
+            }
+        });
+
+
+
+
     }
+    public void openActivityMilk() {
+        Intent intent = new Intent(this, Milk.class);
+        startActivity(intent);
+
+    }
+    public void openActivityFarmAnimals() {
+        Intent intent = new Intent(this, FarmAnimals.class);
+        startActivity(intent);
 
 
+    }
 
 }

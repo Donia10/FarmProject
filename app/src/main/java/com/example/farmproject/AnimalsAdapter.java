@@ -18,12 +18,21 @@ public class AnimalsAdapter extends RecyclerView.Adapter <AnimalsAdapter.Animals
     public static final String EXTRA_TEXT="com.example.farmproject.EXTRA_TEXT";
 
     List<FarmAnimal> farmAnimal;
+    List<String> f;
     Context context;
+    /*
     public AnimalsAdapter(List<FarmAnimal> farmAnimal,Context context){
         this.farmAnimal=farmAnimal;
         this.context=context;
 
+    }**/
+    public AnimalsAdapter(List<String> farmAnimal,Context context){
+        this.f=farmAnimal;
+        this.context=context;
+
     }
+
+
 
     @NonNull
     @Override
@@ -36,8 +45,7 @@ public class AnimalsAdapter extends RecyclerView.Adapter <AnimalsAdapter.Animals
 
     @Override
     public void onBindViewHolder(@NonNull AnimalsHolder holder, int position) {
-
-        final FarmAnimal f=farmAnimal.get(position);
+       /* final FarmAnimal f=farmAnimal.get(position);
         holder.button.setText(f.animal_id);
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,15 +55,24 @@ public class AnimalsAdapter extends RecyclerView.Adapter <AnimalsAdapter.Animals
                 Intent intent=new Intent(context,DataAnimal.class);
                 intent.putExtra(EXTRA_TEXT,textName);
                 context.startActivity(intent);
-
             }
-        });
-
+        });**/
+         final String s=f.get(position);
+       holder.button.setText(s);
+       holder.button.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent=new Intent(context,DataAnimal.class);
+               intent.putExtra(EXTRA_TEXT,s);
+               context.startActivity(intent);
+           }
+       });
     }
 
     @Override
     public int getItemCount() {
-        return farmAnimal.size();
+      //  return farmAnimal.size();
+        return f.size();
     }
 
 

@@ -8,6 +8,9 @@ public  class FarmAnimal {
         this.animal_id = animal_id;
     }
 
+    public FarmAnimal() {
+    }
+
     public String getAnimal_id() {
         return animal_id;
     }
