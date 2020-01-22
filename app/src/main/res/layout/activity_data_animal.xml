@@ -15,10 +15,46 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-    <TextView
-        android:id="@+id/dataAnimal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="data"/>
 
+
+    <LinearLayout
+        android:id="@+id/milkLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/border"
+        style="@style/ThemeOverlay.AppCompat"
+        android:layout_margin="@dimen/fui_auth_method_button_margin">
+        <TextView
+            android:id="@+id/fat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fui_auth_method_button_drawablePadding"
+            android:layout_margin="@dimen/fui_auth_method_button_margin"/>
+        <TextView
+            android:id="@+id/milkFirst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fui_auth_method_button_drawablePadding"
+            android:layout_margin="@dimen/fui_auth_method_button_margin"/>
+        <TextView
+            android:id="@+id/milkSecond"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fui_auth_method_button_drawablePadding"
+            android:layout_margin="@dimen/fui_auth_method_button_margin"/>
+        <TextView
+            android:id="@+id/milkThird"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fui_auth_method_button_drawablePadding"
+            android:layout_margin="@dimen/fui_auth_method_button_margin"/>
+        <TextView
+            android:id="@+id/protein"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fui_auth_method_button_drawablePadding"
+            android:layout_margin="@dimen/fui_auth_method_button_margin"/>
+
+    </LinearLayout>
 </LinearLayout>

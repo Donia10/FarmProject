@@ -21,9 +21,13 @@ import java.util.concurrent.Executor;
 public class DataAnimal extends AppCompatActivity {
 
     public static final String EXTRA="com.example.farmproject.EXTRA";
-    TextView data;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
+    TextView fat;
+    TextView milkFirst;
+    TextView milkSecond;
+    TextView milkThird;
+    TextView protien;
     @Override
     public boolean bindIsolatedService(Intent service, int flags, String instanceName, Executor executor, ServiceConnection conn) {
         return super.bindIsolatedService(service, flags, instanceName, executor, conn);
@@ -44,7 +48,11 @@ public class DataAnimal extends AppCompatActivity {
         getSupportActionBar().setTitle("حيوان رقم "+animalId);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //objects
-        data=findViewById(R.id.dataAnimal);
+        fat=findViewById(R.id.fat);
+        milkFirst=findViewById(R.id.milkFirst);
+        milkSecond=findViewById(R.id.milkSecond);
+        milkThird=findViewById(R.id.milkThird);
+        protien=findViewById(R.id.protein);
 
         firebaseDatabase=FirebaseDatabase.getInstance();
         assert animalId != null;
@@ -54,7 +62,12 @@ public class DataAnimal extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 dataSnapshot.child("milk");
                AmountOfMilk amountOfMilk=dataSnapshot.getValue(AmountOfMilk.class);
-               data.setText("fat "+amountOfMilk.getFatPercentage());
+               fat.setText("FatPercentage = "+amountOfMilk.getFatPercentage());
+               milkFirst.setText("MilkFirstTime = "+amountOfMilk.getMilkFirstTime());
+               milkSecond.setText("MilkSecondTime = "+amountOfMilk.getMilkSecondTime());
+               milkThird.setText("MilkThirdTime = "+amountOfMilk.getMilkThirdTime());
+               protien.setText("proteinRatio = "+amountOfMilk.getProteinRatio());
+
             }
 
             @Override
