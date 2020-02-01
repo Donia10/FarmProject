@@ -17,7 +17,7 @@ public class Fortifications extends AppCompatActivity {
     EditText typeFortification;
     EditText dateOfNextDose;
     Button add;
-    Fortification_ fortification;
+    Fortification fortification;
     //firebase instance object
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mAnimalsDatabaseReference;
@@ -54,8 +54,8 @@ public class Fortifications extends AppCompatActivity {
         });
     }
     public void writeOnDatabase(){
-        fortification=new Fortification_(typeFortification.getText().toString(),dateOfNextDose.getText().toString());
-        mAnimalsDatabaseReference.child("fortifications").child("1").setValue(fortification);
+        Fortification fortification=new Fortification(typeFortification.getText().toString(),dateOfNextDose.getText().toString());
+        mAnimalsDatabaseReference.child("fortification").child("1").setValue(fortification);
 
     }
 }

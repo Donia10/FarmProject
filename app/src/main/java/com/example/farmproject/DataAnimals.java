@@ -40,12 +40,12 @@ public class DataAnimals extends AppCompatActivity {
         date=findViewById(R.id.date);
 
         firebaseDatabase=FirebaseDatabase.getInstance();
-        databaseReference=firebaseDatabase.getReference().child("animals").child("fortifications").child("1");
+        databaseReference=firebaseDatabase.getReference().child("animals").child("fortification").child("1");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Fortification_ f=dataSnapshot.getValue(Fortification_.class);
-                readFortification(f);
+                Fortification fortification=dataSnapshot.getValue(Fortification.class);
+                readFortification(fortification);
             }
 
             @Override
@@ -54,7 +54,25 @@ public class DataAnimals extends AppCompatActivity {
             }
         });
 
-        readMilk(new AmountOfMilk("","","","",""));
+        ref=firebaseDatabase.getReference().child("animals").child("milk").child("1");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                AmountOfMilk amountOfMilk=dataSnapshot.getValue(AmountOfMilk.class);
+                readMilk(amountOfMilk);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+       // readMilk(new AmountOfMilk("","","","",""));
+        //Fortification fortification=new Fortification("aaaa","ssss");
+        //readFortification(fortification);
+
     }
     private void readMilk(AmountOfMilk amountOfMilk){
         first.setText("Milk First Time = "+amountOfMilk.getMilkFirstTime());
@@ -63,9 +81,9 @@ public class DataAnimals extends AppCompatActivity {
         fat.setText("Fat Percentage = "+amountOfMilk.getFatPercentage());
         protein.setText("protein Ratio= "+amountOfMilk.getProteinRatio());
     }
-    private void readFortification(Fortification_ fortification_){
+    private void readFortification(Fortification fortification){
 
-        type.setText(" Type Fortification ="+fortification_.getTypeFortification());
-        date.setText("DateOfNextDose ="+fortification_.getDateOfNextDose());
+        type.setText("Type Fortification ="+fortification.getTypeOfFortification());
+        date.setText("DateOfNextDose ="+fortification.getDateOfNextDose());
           }
 }

@@ -1,31 +1,15 @@
 package com.example.farmproject;
+
 public class Fortification {
-    private Fortification_ fortification;
-
-    public Fortification_ getFortification() {
-        return fortification;
-    }
-
-    public void setFortification(Fortification_ fortification) {
-        this.fortification = fortification;
-    }
-
-}
- class Fortification_ {
-    private String typeFortification;
+    private String typeOfFortification;
     private String dateOfNextDose;
 
-     public Fortification_(String typeFortification, String dateOfNextDose) {
-         this.typeFortification = typeFortification;
-         this.dateOfNextDose = dateOfNextDose;
-     }
-
-     public String getTypeFortification() {
-        return typeFortification;
+    public String getTypeOfFortification() {
+        return typeOfFortification;
     }
 
-    public void setTypeFortification(String typeFortification) {
-        this.typeFortification = typeFortification;
+    public void setTypeOfFortification(String typeOfFortification) {
+        this.typeOfFortification = typeOfFortification;
     }
 
     public String getDateOfNextDose() {
@@ -36,4 +20,27 @@ public class Fortification {
         this.dateOfNextDose = dateOfNextDose;
     }
 
+    public Fortification() {
+    }
+
+    public Fortification(String typeOfFortification, String dateOfNextDose) {
+        this.typeOfFortification = typeOfFortification;
+        this.dateOfNextDose = dateOfNextDose;
+    }
+
+}
+class forti{
+    private Fortification fortification;
+
+    public Fortification getFortification() {
+        return fortification;
+    }
+
+    public void setFortification(Fortification fortification) {
+        this.fortification = fortification;
+    }
+
+    public forti(Fortification fortification) {
+        this.fortification = fortification;
+    }
 }
