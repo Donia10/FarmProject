@@ -61,8 +61,8 @@ public class Milk extends AppCompatActivity implements AdapterView.OnItemSelecte
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AmountOfMilk amountOfMilk=new AmountOfMilk(milkTheFirstTime.getText().toString(),milkTheSecondTime.getText().toString(),milkTheThirdTime.getText().toString(),fatText.getText().toString(),proteinText.getText().toString());
-
+               // AmountOfMilk amountOfMilk=new AmountOfMilk(milkTheFirstTime.getText().toString(),milkTheSecondTime.getText().toString(),milkTheThirdTime.getText().toString(),fatText.getText().toString(),proteinText.getText().toString());
+                writeData();
                 //create new node in tree of animals
               /* Map<String,AmountOfMilk> milkMap= new HashMap<>();
                 Map<String,String>map=new HashMap<>();
@@ -73,7 +73,7 @@ public class Milk extends AppCompatActivity implements AdapterView.OnItemSelecte
                // mAnimalsDatabaseReference.push().setValue(milkMap);
 
                 //create milk into id without Map
-                mAnimalsDatabaseReference.child("1").child("milk").setValue(amountOfMilk);
+             //   mAnimalsDatabaseReference.child("1").child("milk").setValue(amountOfMilk);//
 
                 //mAnimalsDatabaseReference.setValue(amountOfMilk);
               // mAnimalsDatabaseReference.push().setValue(amountOfMilk);
@@ -123,5 +123,13 @@ public class Milk extends AppCompatActivity implements AdapterView.OnItemSelecte
     }
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+    }
+
+    public void writeData(){
+        AmountOfMilk amount=new AmountOfMilk(milkTheThirdTime.getText().toString(),milkTheSecondTime.getText().toString(),milkTheThirdTime.getText().toString(),fatText.getText().toString(),proteinText.getText().toString());
+        mAnimalsDatabaseReference.child("milk").child("1").setValue(amount);
+        mAnimalsDatabaseReference.child("milk").child("2").setValue(amount);
+
+
     }
 }

@@ -48,9 +48,10 @@ public class FarmAnimals extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar_animals.setTitleTextColor(Color.WHITE);
 
+
         //firebase objects
         firebaseDatabse=FirebaseDatabase.getInstance();
-        databaseRef=firebaseDatabse.getReference().child("animals");
+        databaseRef=firebaseDatabse.getReference().child("animals").child("users");
 
         //search EditText
         search = findViewById(R.id.searchId);
@@ -71,6 +72,7 @@ public class FarmAnimals extends AppCompatActivity {
                 filter(s.toString());
             }
         });
+
         //listView&&Adapter
        /* listView=findViewById(R.id.list_item);
         List<FarmAnimal> farmAnimal=new ArrayList<>();

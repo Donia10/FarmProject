@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button milk;
     Button farmAnimals;
+    Button fortifications;
 
     //firebase instance object
     public FirebaseDatabase mFirebaseDatabase;
@@ -44,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        fortifications=findViewById(R.id.fortifications);
+        fortifications.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivityFortifications();
+            }
+        });
+
 
 
 
@@ -57,6 +66,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, FarmAnimals.class);
         startActivity(intent);
 
+
+    }
+    public void openActivityFortifications() {
+        Intent intent = new Intent(this, Fortifications.class);
+        startActivity(intent);
 
     }
 
