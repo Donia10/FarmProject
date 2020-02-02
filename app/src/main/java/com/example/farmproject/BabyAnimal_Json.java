@@ -34,9 +34,7 @@ public class BabyAnimal_Json {
             return newBabyAnimal;
         }
 
-        public void setNewBabyAnimal(NewBabyAnimal newBabyAnimal) {
-            this.newBabyAnimal = newBabyAnimal;
-        }
+
     }
 
     public class NewBabyAnimal {
