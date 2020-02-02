@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class BabyAnimal_Activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class BabyAnimal_Activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     TextView birthday;
     TextView dadrnum_txt;
     TextView mumnum;
@@ -33,24 +33,24 @@ public class BabyAnimal_Activity extends AppCompatActivity implements AdapterVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_baby_animal_);
 
-        birthday=(TextView) findViewById(R.id.birthdatetxt);
-        dadrnum_txt=(TextView) findViewById(R.id.fathernum);
-        mumnum=(TextView) findViewById(R.id.mothernum);
-        sonnum= (TextView) findViewById(R.id.babynum);
-        sonWeight= (TextView)findViewById(R.id.babyweight);
-        type= (Spinner) findViewById(R.id.typesurgion);
-      //   type.setOnItemClickListener(this);
+        birthday = (TextView) findViewById(R.id.birthdatetxt);
+        dadrnum_txt = (TextView) findViewById(R.id.fathernum);
+        mumnum = (TextView) findViewById(R.id.mothernum);
+        sonnum = (TextView) findViewById(R.id.babynum);
+        sonWeight = (TextView) findViewById(R.id.babyweight);
+        type = (Spinner) findViewById(R.id.typesurgion);
+        //   type.setOnItemClickListener(this);
         sontype = (Spinner) findViewById(R.id.babytype);
-       // sontype.setOnItemClickListener(this);
-        add=(Button) findViewById(R.id.addbtn);
+        // sontype.setOnItemClickListener(this);
+        add = (Button) findViewById(R.id.addbtn);
 
 
         //firebase object
-        mFirebaseDatabase= FirebaseDatabase.getInstance();
-        mAnimalsDatabaseReference=mFirebaseDatabase.getReference().child("animals");
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        mAnimalsDatabaseReference = mFirebaseDatabase.getReference().child("animals");
 
 
-       final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Spinner_items, android.R.layout.simple_spinner_item);
+        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Spinner_items, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
@@ -67,20 +67,18 @@ public class BabyAnimal_Activity extends AppCompatActivity implements AdapterVie
             @Override
             public void onClick(View v) {
 
-                 BabyAnimal_Json babyanimal=new BabyAnimal_Json(type.getSelectedItem().toString());
-                 BabyAnimal_Json babyanimal2=new BabyAnimal_Json(sontype.getSelectedItem().toString());
+                BabyAnimal_Json babyanimal = new BabyAnimal_Json(type.getSelectedItem().toString());
+                BabyAnimal_Json babyanimal2 = new BabyAnimal_Json(sontype.getSelectedItem().toString());
 
-                    mAnimalsDatabaseReference.push().child("baby").setValue(babyanimal);
-                    mAnimalsDatabaseReference.push().child("baby").setValue(babyanimal2);
+                mAnimalsDatabaseReference.push().child("baby").setValue(babyanimal);
+                mAnimalsDatabaseReference.push().child("baby").setValue(babyanimal2);
 
-          }
+            }
         });
 
 
-
-
-
     }
+    /*
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -93,4 +91,6 @@ public class BabyAnimal_Activity extends AppCompatActivity implements AdapterVie
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+    **/
+
 }

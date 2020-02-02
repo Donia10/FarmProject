@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">FarmProject</string>
-
+    <string name="FirstMilk">"كمية الحليب فى الحلبه الاولى"</string>
+    <string name="SecondMilk">"كمية الحليب فى الحلبه الثانية"</string>
+    <string name="ThirdMilk">"كمية الحليب فى الحلبه الثالثة"</string>
+    <string name="Fat">"نسبة الدهن"</string>
+    <string name="Protein">"نسبة البروتين"</string>
+    <string name="type">"نوع التحصين"</string>
+    <string name="date">"ميعاد الجرعه القادمه"</string>
     <string-array name="items">
         <item>عدد مرات الحلب اليومية</item>
         <item>1</item>

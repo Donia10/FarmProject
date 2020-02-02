@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_centerVertical="true"
     tools:context=".DataAnimals">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tlData"
@@ -16,52 +17,73 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
 
     </androidx.appcompat.widget.Toolbar>
+
     <LinearLayout
         android:background="@drawable/border"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_margin="@dimen/fui_auth_method_button_drawablePadding"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
         <TextView
             android:id="@+id/first"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp">
         </TextView>
         <TextView
             android:id="@+id/second"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp">
         </TextView>
         <TextView
             android:id="@+id/third"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp">
         </TextView>
         <TextView
             android:id="@+id/fatP"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp">
         </TextView>
         <TextView
             android:id="@+id/proteinR"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp">
         </TextView>
+
     </LinearLayout>
 
     <LinearLayout
         android:background="@drawable/border"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_margin="@dimen/fui_auth_method_button_drawablePadding"
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
         <TextView
             android:id="@+id/type"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp">
         </TextView>
         <TextView
             android:id="@+id/date"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp">
         </TextView>
 
     </LinearLayout>

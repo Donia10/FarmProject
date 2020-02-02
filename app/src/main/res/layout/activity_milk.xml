@@ -36,18 +36,19 @@
             android:background="@drawable/border"
             android:padding="5dp"
             android:layout_margin="5dp"/>
+
         <EditText
             android:id="@+id/item1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@drawable/border"
-            android:ems="10"
-            android:padding="5dp"
-            android:inputType="number"
             android:bufferType="editable"
-            android:hint="كمية الحليب فى الحلبه الاولى"
-            android:visibility="gone"/>
+            android:ems="10"
+            android:hint="@string/FirstMilk"
+            android:inputType="number"
+            android:padding="5dp"
+            android:visibility="gone" />
         <EditText
             android:id="@+id/item2"
             android:layout_width="match_parent"
@@ -58,7 +59,7 @@
             android:layout_margin="5dp"
             android:inputType="number"
             android:bufferType="editable"
-            android:hint="كمية الحليب فى الحلبه الثانية"
+            android:hint="@string/SecondMilk"
             android:visibility="gone"/>
         <EditText
             android:id="@+id/item3"
@@ -70,7 +71,7 @@
             android:layout_margin="5dp"
             android:inputType="number"
             android:bufferType="editable"
-            android:hint="كمية الحليب فى الحلبه الثالثة"
+            android:hint="@string/ThirdMilk"
             android:visibility="gone"/>
 
         <EditText
@@ -80,7 +81,7 @@
             android:layout_margin="5dp"
             android:background="@drawable/border"
             android:ems="10"
-            android:hint="نسبة الدهن"
+            android:hint="@string/Fat"
             android:inputType="number"
             android:bufferType="editable"
             android:padding="5dp"/>
@@ -90,7 +91,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="نسبة البروتين"
+        android:hint="@string/Protein"
         android:padding="5dp"
         android:layout_margin="5dp"
         android:background="@drawable/border"
