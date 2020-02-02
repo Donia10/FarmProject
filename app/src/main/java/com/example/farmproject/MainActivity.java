@@ -7,29 +7,21 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 public class MainActivity extends AppCompatActivity {
-
     Button milk;
     Button farmAnimals;
     Button fortifications;
+    Button addBabyAniaml;
 
-    //firebase instance object
-    public FirebaseDatabase mFirebaseDatabase;
-    public DatabaseReference mAnimalsDatabaseReference;
-
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
         setContentView(R.layout.activity_main);
-
-        /*//firebase
-        mFirebaseDatabase=FirebaseDatabase.getInstance();
-        mAnimalsDatabaseReference=mFirebaseDatabase.getReference().child("Animals");
-        **/
-        //objects
+//objects
         milk=findViewById(R.id.milk);
+        addBabyAniaml=findViewById(R.id.add_baby);
+        farmAnimals=findViewById(R.id.farm_animals);
+        fortifications=findViewById(R.id.fortifications);
+
         milk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        farmAnimals=findViewById(R.id.farm_animals);
         farmAnimals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        fortifications=findViewById(R.id.fortifications);
         fortifications.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,10 +43,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
+        addBabyAniaml.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivityAddBabyAnimal();
+            }
+        });
     }
+
     public void openActivityMilk() {
         Intent intent = new Intent(this, Milk.class);
         startActivity(intent);
@@ -73,5 +67,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+    public void openActivityAddBabyAnimal() {
+        Intent intent = new Intent(this, BabyAnimal_Activity.class);
+        startActivity(intent);
+
+    }
+
 
 }

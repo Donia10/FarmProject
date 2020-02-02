@@ -1,17 +1,15 @@
 package com.example.farmproject;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import androidx.appcompat.widget.Toolbar;
 
 public class BabyAnimal_Activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     TextView birthday;
@@ -24,14 +22,21 @@ public class BabyAnimal_Activity extends AppCompatActivity implements AdapterVie
     Button add;
 
     //firebase instance object
-
+/*
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mAnimalsDatabaseReference;
-
+**/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_baby_animal_);
+
+        //toolbar
+        Toolbar toolbar=(Toolbar)findViewById(R.id.tlbaby);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("إضافة مولود جديد ");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setTitleTextColor(Color.WHITE);
 
         birthday = (TextView) findViewById(R.id.birthdatetxt);
         dadrnum_txt = (TextView) findViewById(R.id.fathernum);
@@ -44,11 +49,10 @@ public class BabyAnimal_Activity extends AppCompatActivity implements AdapterVie
         // sontype.setOnItemClickListener(this);
         add = (Button) findViewById(R.id.addbtn);
 
-
+/*
         //firebase object
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mAnimalsDatabaseReference = mFirebaseDatabase.getReference().child("animals");
-
 
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Spinner_items, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
@@ -61,8 +65,7 @@ public class BabyAnimal_Activity extends AppCompatActivity implements AdapterVie
 
         sontype.setAdapter(adapter1);                          //spinner2
         sontype.setOnItemSelectedListener(this);
-
-
+/*
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,25 +75,15 @@ public class BabyAnimal_Activity extends AppCompatActivity implements AdapterVie
 
                 mAnimalsDatabaseReference.push().child("baby").setValue(babyanimal);
                 mAnimalsDatabaseReference.push().child("baby").setValue(babyanimal2);
-
-            }
+           }
         });
-
-
+    **/
     }
-    /*
-
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         parent.getItemAtPosition(position);
-
-
     }
-
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
     }
-    **/
-
 }
