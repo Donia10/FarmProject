@@ -28,6 +28,7 @@ public class DataAnimals extends AppCompatActivity {
    private FirebaseDatabase firebaseDatabase;
    private DatabaseReference databaseReference;
    private DatabaseReference ref;
+   private DatabaseReference refBaby;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class DataAnimals extends AppCompatActivity {
         date=findViewById(R.id.date);
 
         firebaseDatabase=FirebaseDatabase.getInstance();
-        databaseReference=firebaseDatabase.getReference().child("animals").child("fortification").child("1");
+        databaseReference=firebaseDatabase.getReference().child("animals").child("fortification").child(animalID);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -67,7 +68,7 @@ public class DataAnimals extends AppCompatActivity {
             }
         });
 
-        ref=firebaseDatabase.getReference().child("animals").child("milk").child("1");
+        ref=firebaseDatabase.getReference().child("animals").child("milk").child(animalID);
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -82,7 +83,7 @@ public class DataAnimals extends AppCompatActivity {
         });
 
 
-       // readMilk(new AmountOfMilk("","","","",""));
+        // readMilk(new AmountOfMilk("","","","",""));
         //Fortification fortification=new Fortification("aaaa","ssss");
         //readFortification(fortification);
 

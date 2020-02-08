@@ -130,6 +130,5 @@ public class Milk extends AppCompatActivity implements AdapterView.OnItemSelecte
         mAnimalsDatabaseReference.child("milk").child("1").setValue(amount);
         mAnimalsDatabaseReference.child("milk").child("2").setValue(amount);
 
-
     }
 }

@@ -24,11 +24,13 @@ public class BabyAnimal_Activity extends AppCompatActivity implements AdapterVie
     Spinner type;
     Spinner sontype;
     Button add;
+    TextView ss;
 
     //firebase instance object
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mAnimalsDatabaseReference;
+    private DatabaseReference ref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +54,12 @@ public class BabyAnimal_Activity extends AppCompatActivity implements AdapterVie
         sontype = (Spinner) findViewById(R.id.babytype);
         // sontype.setOnItemClickListener(this);
         add = (Button) findViewById(R.id.addbtn);
-
+        ss=findViewById(R.id.s);
 
         //firebase object
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mAnimalsDatabaseReference = mFirebaseDatabase.getReference().child("animals");
+        ref = mFirebaseDatabase.getReference().child("animals");
 
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Spinner_items, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
@@ -69,16 +72,18 @@ public class BabyAnimal_Activity extends AppCompatActivity implements AdapterVie
 
         sontype.setAdapter(adapter1);                          //spinner2
         sontype.setOnItemSelectedListener(this);
-
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                writeData();
 
+                /*
                 BabyAnimal_Json babyanimal = new BabyAnimal_Json(type.getSelectedItem().toString());
                 BabyAnimal_Json babyanimal2 = new BabyAnimal_Json(sontype.getSelectedItem().toString());
 
                 mAnimalsDatabaseReference.child("baby").setValue(babyanimal);
                 //mAnimalsDatabaseReference.push().child("baby").setValue(babyanimal2);
+                **/
            }
         });
 
@@ -89,5 +94,14 @@ public class BabyAnimal_Activity extends AppCompatActivity implements AdapterVie
     }
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+    }
+
+    public void writeData(){
+
+        String id=sonnum.getText().toString();
+        NewBabyAnimal newBabyAnimal =new NewBabyAnimal(birthday.getText().toString(),dadrnum_txt.getText().toString(),mumnum.getText().toString(), sonnum.getText().toString(),type.getSelectedItem().toString(), sontype.getSelectedItem().toString(),sonWeight.getText().toString()) ;
+        ref.child("animalId").child(id).child("id").setValue(id);
+        //ref.child("animalId").child(id).child("babyAnimal").setValue(newBabyAnimal);
+         mAnimalsDatabaseReference.child("babyAnimal").child(sonnum.getText().toString()).setValue(newBabyAnimal);
     }
 }

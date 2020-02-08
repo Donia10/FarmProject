@@ -51,7 +51,7 @@ public class FarmAnimals extends AppCompatActivity {
 
         //firebase objects
         firebaseDatabse=FirebaseDatabase.getInstance();
-        databaseRef=firebaseDatabse.getReference().child("animals").child("users");
+        databaseRef=firebaseDatabse.getReference().child("animals").child("animalId");
 
         //search EditText
         search = findViewById(R.id.searchId);

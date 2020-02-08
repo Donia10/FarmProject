@@ -62,6 +62,7 @@ public class AnimalsAdapter extends RecyclerView.Adapter <AnimalsAdapter.Animals
        holder.button.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+
                Intent intent=new Intent(context,DataAnimals.class);
                intent.putExtra(EXTRA_TEXT,s);
                context.startActivity(intent);
