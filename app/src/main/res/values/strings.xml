@@ -35,5 +35,21 @@
 
     </string-array>
 
+    <string-array name="Spinner4_items">Spinner3_items
+        <item> العمر </item>
+        <item> يوم </item>
+        <item> شهر </item>
+        <item> سنة </item>
+
+    </string-array>
+
+    <string-array name="Spinner5_items">Spinner3_items
+        <item> الحالة التناسلية </item>
+        <item> عجلة </item>
+        <item> عشار حديث </item>
+        <item> عشار ثقيل </item>
+
+    </string-array>
+
 </resources>
 
