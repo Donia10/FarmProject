@@ -51,5 +51,13 @@
 
     </string-array>
 
+    <string-array name="Spinner6_items">Spinner3_items
+        <item> نوع الفقد </item>
+        <item> نافق </item>
+        <item> مُباع </item>
+        <item> ذبح </item>
+
+    </string-array>
+
 </resources>
 
