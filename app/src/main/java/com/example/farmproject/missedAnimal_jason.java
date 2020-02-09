@@ -17,6 +17,10 @@ public class missedAnimal_jason {
 
         private String missedType;
 
+        public MissedAnimal(String missedType) {     //constructor
+            this.missedType = missedType;
+        }
+
         public String getMissedType() { return missedType; }
 
         public void setMissedType(String missedType) { this.missedType = missedType;}
