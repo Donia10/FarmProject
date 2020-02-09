@@ -1,8 +1,5 @@
 package com.example.farmproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +7,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -63,7 +63,8 @@ public class missedAnimal extends AppCompatActivity {
 
     public void writeOnDatabase()
     {
-        missedAnimal missdanimal = new missedAnimal(missedtype.getSelectedItem().toString());
+
+        MissedAnimal missdanimal = new MissedAnimal(missedtype.getSelectedItem().toString());
         mAnimalsDatabaseReference.child("missedAnimal").child("1").setValue(missdanimal);
 
 

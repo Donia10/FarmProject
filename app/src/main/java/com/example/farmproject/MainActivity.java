@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     Button farmAnimals;
     Button fortifications;
     Button addBabyAniaml;
-
+    Button loseAnimal;
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.activity_main);
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         addBabyAniaml=findViewById(R.id.add_baby);
         farmAnimals=findViewById(R.id.farm_animals);
         fortifications=findViewById(R.id.fortifications);
+        loseAnimal=findViewById(R.id.lost_animal);
 
         milk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
                 openActivityAddBabyAnimal();
             }
         });
+
+        loseAnimal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivityMissedAnimal();
+            }
+        });
     }
 
     public void openActivityMilk() {
@@ -69,6 +77,11 @@ public class MainActivity extends AppCompatActivity {
     }
     public void openActivityAddBabyAnimal() {
         Intent intent = new Intent(this, BabyAnimal_Activity.class);
+        startActivity(intent);
+
+    }
+    public void openActivityMissedAnimal() {
+        Intent intent = new Intent(this, missedAnimal.class);
         startActivity(intent);
 
     }

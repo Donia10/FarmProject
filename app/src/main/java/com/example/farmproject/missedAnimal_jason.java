@@ -1,19 +1,25 @@
 package com.example.farmproject;
 
-public class missedAnimal_jason {
+  public class missedAnimal_jason {
 
-    private MissedAnimal missedAnimal;
+     private MissedAnimal missedAnimal;
 
-    public missedAnimal_jason(MissedAnimal missedAnimal) { this.missedAnimal = missedAnimal; }
-
-
-
-        public MissedAnimal getMissedAnimal() { return missedAnimal;}
-
-        public void setMissedAnimal(MissedAnimal missedAnimal) { this.missedAnimal = missedAnimal;}
+     public missedAnimal_jason(MissedAnimal missedAnimal) {
+         this.missedAnimal = missedAnimal;
+     }
 
 
-    public class MissedAnimal {
+     public MissedAnimal getMissedAnimal() {
+         return missedAnimal;
+     }
+
+     public void setMissedAnimal(MissedAnimal missedAnimal) {
+         this.missedAnimal = missedAnimal;
+     }
+
+ }
+
+  class MissedAnimal {
 
         private String missedType;
 
@@ -26,4 +32,3 @@ public class missedAnimal_jason {
         public void setMissedType(String missedType) { this.missedType = missedType;}
 
     }
-}
