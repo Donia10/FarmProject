@@ -64,8 +64,8 @@ public class missedAnimal extends AppCompatActivity {
     public void writeOnDatabase()
     {
 
-        MissedAnimal missdanimal = new MissedAnimal(missedtype.getSelectedItem().toString());
-        mAnimalsDatabaseReference.child("missedAnimal").child("1").setValue(missdanimal);
+       AnimalMissed missdanimal = new AnimalMissed(missedtype.getSelectedItem().toString());
+       mAnimalsDatabaseReference.child("missedAnimal").child("1").setValue(missdanimal);
 
 
     }

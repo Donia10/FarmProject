@@ -95,7 +95,7 @@
             android:id="@+id/lost_animal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="الحيوانات الموجوده"
+            android:text="الحيوانات المفقوده"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="90dp"
