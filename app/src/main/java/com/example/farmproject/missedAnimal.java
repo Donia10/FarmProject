@@ -42,15 +42,15 @@ public class missedAnimal extends AppCompatActivity {
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mAnimalsDatabaseReference = mFirebaseDatabase.getReference().child("animals");
 
-       final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Spinner_items, android.R.layout.simple_spinner_item);
+     ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Spinner3_items, android.R.layout.simple_spinner_item);
 
         missedtype.setAdapter(adapter);
-        missedtype.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+       // missedtype.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // writeOnDatabase();
+               writeOnDatabase();
 
 
             }

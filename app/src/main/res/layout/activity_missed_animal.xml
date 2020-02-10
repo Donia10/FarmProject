@@ -29,7 +29,7 @@
         android:layout_centerVertical="true">
 
 
-        <SearchView
+       <!-- <SearchView
             android:id="@+id/animalnum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,13 +37,13 @@
             android:background="@drawable/border"
             android:ems="10"
             android:hint="ادخل رقم الحيوان"
-            android:padding="5dp" />
+            android:padding="5dp" /> -->
         <Spinner
             android:id="@+id/missedspinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:entries="@array/Spinner6_items"
+            android:entries="@array/Spinner3_items"
             android:paddingLeft="5dp"
             android:paddingTop="5dp"
             android:paddingRight="20dp"

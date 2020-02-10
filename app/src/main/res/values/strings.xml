@@ -35,7 +35,7 @@
 
     </string-array>
 
-    <string-array name="Spinner4_items">Spinner3_items
+    <string-array name="Spinner4_items">Spinner4_items
         <item> العمر </item>
         <item> يوم </item>
         <item> شهر </item>
@@ -43,7 +43,7 @@
 
     </string-array>
 
-    <string-array name="Spinner5_items">Spinner3_items
+    <string-array name="Spinner5_items">Spinner5_items
         <item> الحالة التناسلية </item>
         <item> عجلة </item>
         <item> عشار حديث </item>
@@ -51,13 +51,6 @@
 
     </string-array>
 
-    <string-array name="Spinner6_items">Spinner3_items
-        <item> نوع الفقد </item>
-        <item> نافق </item>
-        <item> مُباع </item>
-        <item> ذبح </item>
-
-    </string-array>
 
 </resources>
 
