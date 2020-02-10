@@ -9,7 +9,7 @@
     tools:context=".missedAnimal">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/fortifications"
+        android:id="@+id/missedanimal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/blue"
