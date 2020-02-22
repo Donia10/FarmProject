@@ -13,6 +13,9 @@ public class MainActivity extends AppCompatActivity {
     Button fortifications;
     Button addBabyAniaml;
     Button loseAnimal;
+    Button addnewanimal;
+    Button pollinations;
+
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.activity_main);
@@ -22,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         farmAnimals=findViewById(R.id.farm_animals);
         fortifications=findViewById(R.id.fortifications);
         loseAnimal=findViewById(R.id.lost_animal);
+        addnewanimal=findViewById(R.id.add_animal);
+        pollinations=findViewById(R.id.Pollination);
 
         milk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +62,22 @@ public class MainActivity extends AppCompatActivity {
                 openActivityMissedAnimal();
             }
         });
+
+        addnewanimal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivityNewAnimal();
+
+            }
+        });
+
+        pollinations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivitypollination();
+
+            }
+        });
     }
 
     public void openActivityMilk() {
@@ -85,6 +106,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void openActivityNewAnimal() {
+        Intent intent = new Intent(this, newAnimal.class);
+        startActivity(intent);
+
+    }
+
+    public void openActivitypollination(){
+        Intent intent = new Intent(this,Pollination.class);
+        startActivity(intent);
+    }
+
 
 
 }

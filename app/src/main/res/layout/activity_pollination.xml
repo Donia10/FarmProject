@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:layout_centerVertical="true"
+tools:context=".Pollination">
+
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/Pollination"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blue"
+    android:textAlignment="gravity"
+    android:layout_gravity="center"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/border"
+    android:layout_margin="@android:dimen/app_icon_size"
+    android:padding="10dp"
+    android:backgroundTint="#FAFAFA"
+    android:orientation="vertical"
+    android:layout_centerVertical="true">
+
+    <Spinner
+        android:id="@+id/number_pollination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:entries="@array/Spinner7_items"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="5dp"
+        android:background="@drawable/border"  />
+    <Spinner
+        android:id="@+id/result_poll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:entries="@array/Spinner8_items"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="5dp"
+        android:background="@drawable/border"  />
+    <Button
+        android:id="@+id/add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@android:dimen/app_icon_size"
+        android:background="@color/blue"
+        android:textColor="@android:color/white"
+        android:text="إضافه"/>
+
+</LinearLayout>
+</LinearLayout>

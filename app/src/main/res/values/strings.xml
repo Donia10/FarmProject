@@ -51,6 +51,27 @@
 
     </string-array>
 
+    <string-array name="Spinner6_items">Spinner6_items
+        <item> نوع الحيوان </item>
+        <item> ذكر </item>
+        <item>انثي </item>
+    </string-array>
+
+    <string-array name="Spinner7_items">Spinner7_items
+        <item>عدد التلقيحات للأخصاب </item>
+        <item> 1 </item>
+        <item> 2 </item>
+        <item> 3 </item>
+
+    </string-array>
+
+    <string-array name="Spinner8_items">Spinner8_items
+        <item> نتيجة التلقيح </item>
+        <item> موجب </item>
+        <item> سالب </item>
+
+    </string-array>
+
 
 </resources>
 
