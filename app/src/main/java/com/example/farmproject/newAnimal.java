@@ -118,7 +118,7 @@ public class newAnimal extends AppCompatActivity  implements AdapterView.OnItemS
             cow.setVisibility(View.GONE);
             newcow.setVisibility(View.GONE);
             oldcow.setVisibility(View.GONE);
-        }*/
+        } */
 
 
     }
