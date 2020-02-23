@@ -27,6 +27,7 @@ public class newAnimal extends AppCompatActivity  implements AdapterView.OnItemS
      EditText cow;
      EditText newcow;
      EditText oldcow;
+
     Button add;
     //firebase instance object
     private FirebaseDatabase mFirebaseDatabase;
