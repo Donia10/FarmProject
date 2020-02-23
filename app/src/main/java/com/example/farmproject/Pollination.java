@@ -14,7 +14,7 @@ import android.widget.Spinner;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Pollination extends AppCompatActivity/*  implements AdapterView.OnItemSelectedListener */{
+public class Pollination extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     Spinner number_poll;
     Spinner result;
@@ -43,10 +43,10 @@ public class Pollination extends AppCompatActivity/*  implements AdapterView.OnI
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setTitleTextColor(Color.WHITE);
 
-     /*  final ArrayAdapter<CharSequence> newadapter = ArrayAdapter.createFromResource(this, R.array.Spinner7_items, android.R.layout.simple_spinner_item);
-        newadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+       final ArrayAdapter<CharSequence> newadapter = ArrayAdapter.createFromResource(this, R.array.Spinner7_items, android.R.layout.simple_spinner_item);
+       newadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         number_poll.setAdapter(newadapter);
-        number_poll.setOnItemSelectedListener(this);*/
+        number_poll.setOnItemSelectedListener(this);
 
       /*  final ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.Spinner8_items, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -56,16 +56,16 @@ public class Pollination extends AppCompatActivity/*  implements AdapterView.OnI
      /*  add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                writeOnDatabase();
+               // writeOnDatabase();
 
             }
         }); */
     }
 
-   /* @Override
+   @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        parent.getItemAtPosition(position);
-       // result.setVisibility(View.VISIBLE);
+       // parent.getItemAtPosition(position);
+       number_poll.setVisibility(View.VISIBLE);
 
 
 
@@ -76,7 +76,7 @@ public class Pollination extends AppCompatActivity/*  implements AdapterView.OnI
 
     }
 
-    public void writeOnDatabase(){
+  /*  public void writeOnDatabase(){
         Pllinations pollinations=new  Pllinations(number_poll.getSelectedItem().toString(), result.getSelectedItem().toString());
         mAnimalsDatabaseReference.child("pollinations").child("1").setValue(pollinations);
 
