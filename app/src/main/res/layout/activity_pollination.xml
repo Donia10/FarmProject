@@ -9,7 +9,7 @@ android:layout_centerVertical="true"
 tools:context=".Pollination">
 
 <androidx.appcompat.widget.Toolbar
-    android:id="@+id/Pollination"
+    android:id="@+id/toolPollination"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/blue"
