@@ -11,8 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".missedAnimal"></activity>
-        <activity android:name=".newAnimal" />
+        <activity android:name=".Pollination"></activity>
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,6 +33,12 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Milk"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".missedAnimal"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".newAnimal"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
