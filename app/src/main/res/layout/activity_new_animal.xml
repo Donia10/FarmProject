@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_centerVertical="true"
+    tools:context=".newAnimal">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tlnewanimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:textAlignment="gravity"
+        android:layout_gravity="center"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@android:dimen/app_icon_size"
+        android:background="@drawable/border"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+
+        <EditText
+            android:id="@+id/animalnum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/border"
+            android:hint="رقم الحيوان"
+            android:inputType="number" />
+
+        <Spinner
+            android:id="@+id/animaltype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:entries="@array/Spinner6_items"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/border" />
+
+        <Spinner
+            android:id="@+id/animalage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:entries="@array/Spinner4_items"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/border" />
+
+
+        <EditText
+            android:id="@+id/ageresult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/border"
+            android:hint=""
+            android:inputType="number" />
+
+        <Spinner
+            android:id="@+id/animalstatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:entries="@array/Spinner5_items"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/border" />
+
+        <Button
+            android:id="@+id/addbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="@android:dimen/app_icon_size"
+            android:text="إضافة" />
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
