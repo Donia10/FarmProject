@@ -51,7 +51,7 @@ tools:context=".Pollination">
         android:paddingBottom="5dp"
         android:background="@drawable/border"  />
     <Button
-        android:id="@+id/add"
+        android:id="@+id/addbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@android:dimen/app_icon_size"
