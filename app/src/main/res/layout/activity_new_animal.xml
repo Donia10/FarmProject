@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_centerVertical="true"
+    android:scrollbars="vertical"
     tools:context=".newAnimal">
 
     <androidx.appcompat.widget.Toolbar
@@ -18,12 +19,20 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@android:dimen/app_icon_size"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="outsideOverlay">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/border"
+        android:layout_margin="@android:dimen/app_icon_size"
         android:padding="10dp"
+        android:scrollbars="vertical"
         android:orientation="vertical"
         android:layout_centerVertical="true">
 
@@ -48,11 +57,16 @@
             android:paddingRight="20dp"
             android:paddingBottom="5dp"
             android:background="@drawable/border" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
         <Spinner
             android:id="@+id/animalage"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:layout_margin="5dp"
             android:entries="@array/Spinner4_items"
             android:paddingLeft="5dp"
@@ -64,13 +78,15 @@
 
         <EditText
             android:id="@+id/ageresult"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:padding="5dp"
             android:layout_margin="5dp"
             android:background="@drawable/border"
-            android:hint=""
+            android:hint="ادخل عمر الحيوان "
             android:inputType="number" />
+        </LinearLayout>
 
         <Spinner
             android:id="@+id/animalstatus"
@@ -83,24 +99,102 @@
             android:paddingRight="20dp"
             android:paddingBottom="5dp"
             android:background="@drawable/border" />
+        <EditText
+            android:id="@+id/maleId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/border"
+            android:hint="رقم الذكر"
+            android:inputType="number"
+            android:visibility="gone"/>
+
+        <Spinner
+            android:id="@+id/numberOfPreviousBirths"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:entries="@array/Spinner9_items"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/border" />
+
+        <Spinner
+            android:id="@+id/typeBaby"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:entries="@array/Spinner2_items"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/border"
+            android:visibility="gone"/>
+        <Spinner
+            android:id="@+id/typeBaby2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:entries="@array/Spinner2_items"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/border"
+            android:visibility="gone"/>
+        <Spinner
+            android:id="@+id/typeBaby3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:entries="@array/Spinner2_items"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/border"
+            android:visibility="gone"/>
+        <Spinner
+            android:id="@+id/typeBaby4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:entries="@array/Spinner2_items"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/border"
+            android:visibility="gone"/>
+        <Spinner
+            android:id="@+id/typeBaby5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:entries="@array/Spinner2_items"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/border"
+            android:visibility="gone"/>
+
 
         <Button
             android:id="@+id/addbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
+            android:background="@color/blue"
             android:layout_margin="@android:dimen/app_icon_size"
-            android:text="إضافة" />
-
-
-
-
-
-
-
-
+            android:textColor="@android:color/white"
+            android:text="إضافه" />
 
 
     </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

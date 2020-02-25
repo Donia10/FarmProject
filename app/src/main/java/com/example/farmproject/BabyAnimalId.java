@@ -1,11 +1,11 @@
 package com.example.farmproject;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,41 +23,38 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FarmAnimals extends AppCompatActivity {
+public class BabyAnimalId extends AppCompatActivity {
 
     private FirebaseDatabase firebaseDatabse;
     private DatabaseReference databaseRef;
     private RecyclerView recyclerView;
-    private AnimalsAdapter animalsAdapter;
+    private BabyIDAdapter babyIDAdapter;
     private ChildEventListener childEventListener;
 
-    private List<FarmAnimal>f=new ArrayList<>();
-    private List<String> ss=new ArrayList<>();
+    private List<FarmAnimal> f=new ArrayList<>();
+    private List<String> babyids=new ArrayList<>();
 
     EditText search;
 
-    public String check;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_farm_animals);
-
-        Intent intent=getIntent();
-        check=intent.getStringExtra(MainActivity.CHECK);
+        setContentView(R.layout.activity_baby_animal_id);
 
         //toolbar
-        Toolbar toolbar_animals = (Toolbar) findViewById(R.id.tl_animals);
+        Toolbar toolbar_animals = (Toolbar) findViewById(R.id.babyID);
         setSupportActionBar(toolbar_animals);
         getSupportActionBar().setTitle("قطيع المزرعة");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar_animals.setTitleTextColor(Color.WHITE);
 
+
         //firebase objects
         firebaseDatabse=FirebaseDatabase.getInstance();
-        databaseRef=firebaseDatabse.getReference().child("animals").child("animalId");
+        databaseRef=firebaseDatabse.getReference().child("animals").child("babyId");
 
         //search EditText
-        search = findViewById(R.id.searchId);
+        search = findViewById(R.id.searchBabyId);
         search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -69,51 +66,26 @@ public class FarmAnimals extends AppCompatActivity {
 
             }
 
-
             @Override
             public void afterTextChanged(Editable s) {
-                filter(s.toString());
+
+                filterl(s.toString());
             }
         });
-
-        //listView&&Adapter
-       /* listView=findViewById(R.id.list_item);
-        List<FarmAnimal> farmAnimal=new ArrayList<>();
-        farmAnimal.add(new FarmAnimal("واحد"));
-        farmAnimal.add(new FarmAnimal("اثنان"));
-        farmAnimal.add(new FarmAnimal("واحد"));
-        farmAnimal.add(new FarmAnimal("1"));
-        farmAnimal.add(new FarmAnimal("واحد"));
-        farmAnimal.add(new FarmAnimal("5"));
-        // animalsAdapter =new AnimalsAdapter(this,R.layout.item_animal,farmAnimal);
-        animalsAdapter=new AnimalsAdapter(this,R.layout.item_animal,farmAnimal);
-        listView.setAdapter(animalsAdapter);**/
-       /*
-        f.add(new FarmAnimal("واحد"));
-        f.add(new FarmAnimal("اثنان "));
-        f.add(new FarmAnimal("2"));
-        f.add(new FarmAnimal("1"));
-        f.add(new FarmAnimal("1"));
-        recyclerView=findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        animalsAdapter=new AnimalsAdapter(f,this);
-        recyclerView.setAdapter(animalsAdapter);**/
-
-
-/*
-        animalsAdapter=new AnimalsAdapter(f,this);
-        recyclerView=findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(animalsAdapter);**/
 
 
         databaseRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
-                String key =dataSnapshot.getKey();
-                ss.add(key);
-                animalsAdapter.notifyDataSetChanged();
+                if (dataSnapshot.exists()) {
+                    String key = dataSnapshot.getKey();
+                    babyids.add(key);
+                    babyIDAdapter.notifyDataSetChanged();
+                }else {
+                    Toast.makeText(getApplicationContext(),"Not found Data",Toast.LENGTH_SHORT).show();
+
+                }
             }
 
             @Override
@@ -137,27 +109,21 @@ public class FarmAnimals extends AppCompatActivity {
             }
         });
 
-
-
-        recyclerView=findViewById(R.id.recyclerView);
-        animalsAdapter=new AnimalsAdapter(ss,this,check);
+        recyclerView = findViewById(R.id.recyclerView);
+        babyIDAdapter = new BabyIDAdapter(babyids, this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(animalsAdapter);
-
+        recyclerView.setAdapter(babyIDAdapter);
 
     }
-
-
-    private void filter(String text){
+    private void filterl(String text){
         ArrayList<FarmAnimal> filteredList=new ArrayList<>();
         for(FarmAnimal item :f){
-           if(item.getAnimal_id().toLowerCase().contains(text.toLowerCase())){
-               filteredList.add(item);
-           }
+            if(item.getAnimal_id().toLowerCase().contains(text.toLowerCase())){
+                filteredList.add(item);
+            }
         }
-        animalsAdapter.filterList(filteredList);
+
+        babyIDAdapter.filterlist(filteredList);
     }
-
-
 
 }

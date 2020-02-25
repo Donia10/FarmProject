@@ -35,7 +35,7 @@
 
     </string-array>
 
-    <string-array name="Spinner4_items">Spinner4_items
+    <string-array name="Spinner4_items">Spinner3_items
         <item> العمر </item>
         <item> يوم </item>
         <item> شهر </item>
@@ -43,7 +43,7 @@
 
     </string-array>
 
-    <string-array name="Spinner5_items">Spinner5_items
+    <string-array name="Spinner5_items">Spinner3_items
         <item> الحالة التناسلية </item>
         <item> عجلة </item>
         <item> عشار حديث </item>
@@ -51,12 +51,12 @@
 
     </string-array>
 
-    <string-array name="Spinner6_items">Spinner6_items
+    <string-array name="Spinner6_items">Spinner3_items
         <item> نوع الحيوان </item>
         <item> ذكر </item>
-        <item>انثي </item>
-    </string-array>
+        <item> انثى </item>
 
+    </string-array>
     <string-array name="Spinner7_items">Spinner7_items
         <item>عدد التلقيحات للأخصاب </item>
         <item> 1 </item>
@@ -72,6 +72,14 @@
 
     </string-array>
 
+    <string-array name="Spinner9_items">Spinner9_items
+        <item> عدد الولادات السابقة </item>
+        <item> 1 </item>
+        <item> 2 </item>
+        <item> 3 </item>
+        <item> 4 </item>
+        <item> 5 </item>
+    </string-array>
 
 </resources>
 

@@ -77,13 +77,6 @@ public class BabyAnimal_Activity extends AppCompatActivity implements AdapterVie
             public void onClick(View v) {
                 writeData();
 
-                /*
-                BabyAnimal_Json babyanimal = new BabyAnimal_Json(type.getSelectedItem().toString());
-                BabyAnimal_Json babyanimal2 = new BabyAnimal_Json(sontype.getSelectedItem().toString());
-
-                mAnimalsDatabaseReference.child("baby").setValue(babyanimal);
-                //mAnimalsDatabaseReference.push().child("baby").setValue(babyanimal2);
-                **/
            }
         });
 
@@ -100,7 +93,7 @@ public class BabyAnimal_Activity extends AppCompatActivity implements AdapterVie
 
         String id=sonnum.getText().toString();
         NewBabyAnimal newBabyAnimal =new NewBabyAnimal(birthday.getText().toString(),dadrnum_txt.getText().toString(),mumnum.getText().toString(), sonnum.getText().toString(),type.getSelectedItem().toString(), sontype.getSelectedItem().toString(),sonWeight.getText().toString()) ;
-        ref.child("animalId").child(id).child("id").setValue(id);
+        ref.child("babyId").child(id).child("id").setValue(id);
         //ref.child("animalId").child(id).child("babyAnimal").setValue(newBabyAnimal);
          mAnimalsDatabaseReference.child("babyAnimal").child(sonnum.getText().toString()).setValue(newBabyAnimal);
     }

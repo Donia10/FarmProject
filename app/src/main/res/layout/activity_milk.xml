@@ -20,9 +20,14 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="outsideOverlay">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/border"
         android:layout_margin="@android:dimen/app_icon_size"
         android:padding="10dp"
@@ -107,4 +112,5 @@
         android:textColor="@android:color/white"
         android:text="إضافه" />
     </LinearLayout>
+    </ScrollView>
 </LinearLayout>

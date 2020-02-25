@@ -1,5 +1,6 @@
 package com.example.farmproject;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,7 @@ public class Fortifications extends AppCompatActivity {
     EditText dateOfNextDose;
     Button add;
     Fortification fortification;
+    String animalId;
     //firebase instance object
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mAnimalsDatabaseReference;
@@ -27,7 +29,10 @@ public class Fortifications extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fortifications);
 
-       //Toolbar
+        Intent intent=getIntent();
+        animalId=intent.getStringExtra(AnimalsAdapter.EXTRA_TEXT);
+
+        //Toolbar
         Toolbar toolbar =(Toolbar)findViewById(R.id.fortifications);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("التحصينات");
@@ -55,7 +60,7 @@ public class Fortifications extends AppCompatActivity {
     }
     public void writeOnDatabase(){
         Fortification fortification=new Fortification(typeFortification.getText().toString(),dateOfNextDose.getText().toString());
-        mAnimalsDatabaseReference.child("fortification").child("1").setValue(fortification);
+        mAnimalsDatabaseReference.child("fortification").child(animalId).setValue(fortification);
 
     }
 }

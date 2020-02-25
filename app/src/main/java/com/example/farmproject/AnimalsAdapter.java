@@ -20,15 +20,18 @@ public class AnimalsAdapter extends RecyclerView.Adapter <AnimalsAdapter.Animals
     List<FarmAnimal> farmAnimal;
     List<String> f;
     Context context;
+    String check;
+    String milk="milk";
     /*
     public AnimalsAdapter(List<FarmAnimal> farmAnimal,Context context){
         this.farmAnimal=farmAnimal;
         this.context=context;
 
     }**/
-    public AnimalsAdapter(List<String> farmAnimal,Context context){
+    public AnimalsAdapter(List<String> farmAnimal,Context context,String check){
         this.f=farmAnimal;
         this.context=context;
+        this.check=check;
 
     }
 
@@ -63,10 +66,33 @@ public class AnimalsAdapter extends RecyclerView.Adapter <AnimalsAdapter.Animals
            @Override
            public void onClick(View v) {
 
-               Intent intent=new Intent(context,DataAnimals.class);
-               intent.putExtra(EXTRA_TEXT,s);
-               context.startActivity(intent);
+               if(check!=null) {
+                   if (check.equals("milk")) {
+                       Intent intent;
+                       intent = new Intent(context, Milk.class);
+                       intent.putExtra(EXTRA_TEXT, s);
+                       context.startActivity(intent);
+                   } else if (check.equals("fortification")) {
+                       Intent intent;
+                       intent = new Intent(context, Fortifications.class);
+                       intent.putExtra(EXTRA_TEXT, s);
+                       context.startActivity(intent);
+                   } else if (check.equals("missedanimal")) {
+                       Intent intent;
+                       intent = new Intent(context, missedAnimal.class);
+                       intent.putExtra(EXTRA_TEXT, s);
+                       context.startActivity(intent);
+                   }
+               }
+               else
+               {
+                   Intent intent;
+                   intent = new Intent(context, DataAnimals.class);
+                   intent.putExtra(EXTRA_TEXT, s);
+                   context.startActivity(intent);
+               }
            }
+
        });
     }
 
@@ -87,6 +113,7 @@ public class AnimalsAdapter extends RecyclerView.Adapter <AnimalsAdapter.Animals
         Button button;
         public AnimalsHolder(@NonNull View itemView) {
             super(itemView);
+            itemView.getContext();
             button=itemView.findViewById(R.id.animal_id);
         }
     }

@@ -24,6 +24,9 @@ public class NewBabyAnimal {
     private String typeOfBaby;
     private String babyWeight;
 
+    public NewBabyAnimal() {
+    }
+
     public NewBabyAnimal(String birthDay, String fatherId, String motherId, String babyId, String typeOperation, String typeOfBaby, String babyWeight) {
         this.birthDay = birthDay;
         this.fatherId = fatherId;

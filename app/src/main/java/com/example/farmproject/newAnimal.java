@@ -1,8 +1,5 @@
 package com.example.farmproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +10,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -22,13 +22,17 @@ public class newAnimal extends AppCompatActivity  implements AdapterView.OnItemS
     Spinner type;
     Spinner Age;
     TextView Age_res;
-
-
-     EditText cow;
-     EditText newcow;
-     EditText oldcow;
-
     Button add;
+    //editText for animalStatus
+    EditText maleId;
+    Spinner status;
+    Spinner previousBirths;
+    Spinner typeBaby;
+    Spinner typeBaby2;
+    Spinner typeBaby3;
+    Spinner typeBaby4;
+    Spinner typeBaby5;
+
     //firebase instance object
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mAnimalsDatabaseReference;
@@ -45,6 +49,14 @@ public class newAnimal extends AppCompatActivity  implements AdapterView.OnItemS
         Age = findViewById(R.id.animalage);
         Age_res = findViewById(R.id.ageresult);
         add = findViewById(R.id.addbtn);
+
+        //objects for AnimalStatus
+        maleId=findViewById(R.id.maleId);
+        typeBaby=findViewById(R.id.typeBaby);
+        typeBaby2=findViewById(R.id.typeBaby2);
+        typeBaby3=findViewById(R.id.typeBaby3);
+        typeBaby4=findViewById(R.id.typeBaby4);
+        typeBaby5=findViewById(R.id.typeBaby5);
 
         //firebase object
         mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -75,13 +87,36 @@ public class newAnimal extends AppCompatActivity  implements AdapterView.OnItemS
         Age.setOnItemSelectedListener(this);
 
        // Create an ArrayAdapter for spinner status
-
-      /*  final Spinner status = findViewById(R.id.animalstatus);
+/*
+        final Spinner status = findViewById(R.id.animalstatus);
 
         final ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.Spinner5_items, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         status.setAdapter(adapter2);
-        status.setOnItemSelectedListener(this);*/
+        status.setOnItemSelectedListener(this);
+        **/
+
+        //spinner
+          status=findViewById(R.id.animalstatus);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        final ArrayAdapter<CharSequence> adapterStatus = ArrayAdapter.createFromResource(this, R.array.Spinner5_items, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapterStatus.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        status.setAdapter(adapterStatus);
+        status.setOnItemSelectedListener(this);
+
+
+        //spinner
+        previousBirths=findViewById(R.id.numberOfPreviousBirths);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        final ArrayAdapter<CharSequence> adapterB = ArrayAdapter.createFromResource(this, R.array.Spinner9_items, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapterB.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        previousBirths.setAdapter(adapterB);
+        previousBirths.setOnItemSelectedListener(this);
+
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,48 +126,81 @@ public class newAnimal extends AppCompatActivity  implements AdapterView.OnItemS
             }
         });
 
+
     }
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-        Age_res.setVisibility(View.VISIBLE);
-
-
-     /* if(position==1){
-            cow.setVisibility(View.VISIBLE);
-            newcow.setVisibility(View.GONE);
-            oldcow.setVisibility(View.GONE);
-
-        }else if(position==2){
-            cow.setVisibility(View.VISIBLE);
-            newcow.setVisibility(View.VISIBLE);
-            oldcow.setVisibility(View.GONE);
-
-
-        }else if(position==3){
-           cow.setVisibility(View.VISIBLE);
-            newcow.setVisibility(View.VISIBLE);
-            oldcow.setVisibility(View.VISIBLE);
+        if(parent.getId() == R.id.animalstatus)
+        {
+        if(position==2||position==3){
+            maleId.setVisibility(View.VISIBLE);
 
         }else {
-            cow.setVisibility(View.GONE);
-            newcow.setVisibility(View.GONE);
-            oldcow.setVisibility(View.GONE);
-        } */
+            maleId.setVisibility(View.GONE);
+        }
+        }
+        if(parent.getId() == R.id.numberOfPreviousBirths) {
+            if (position == 1) {
+                typeBaby.setVisibility(View.VISIBLE);
+                typeBaby2.setVisibility(View.GONE);
+                typeBaby3.setVisibility(View.GONE);
+                typeBaby4.setVisibility(View.GONE);
+                typeBaby5.setVisibility(View.GONE);
+            }
+            else if (position == 2) {
+                typeBaby.setVisibility(View.VISIBLE);
+                typeBaby2.setVisibility(View.VISIBLE);
+                typeBaby3.setVisibility(View.GONE);
+                typeBaby4.setVisibility(View.GONE);
+                typeBaby5.setVisibility(View.GONE);
 
+            }
+            else if (position == 3) {
+                typeBaby.setVisibility(View.VISIBLE);
+                typeBaby2.setVisibility(View.VISIBLE);
+                typeBaby3.setVisibility(View.VISIBLE);
+                typeBaby4.setVisibility(View.GONE);
+                typeBaby5.setVisibility(View.GONE);
+
+            }
+            else if (position == 4) {
+                typeBaby.setVisibility(View.VISIBLE);
+                typeBaby2.setVisibility(View.VISIBLE);
+                typeBaby3.setVisibility(View.VISIBLE);
+                typeBaby4.setVisibility(View.VISIBLE);
+                typeBaby5.setVisibility(View.GONE);
+            }
+            else if(position==5){
+                typeBaby.setVisibility(View.VISIBLE);
+                typeBaby2.setVisibility(View.VISIBLE);
+                typeBaby3.setVisibility(View.VISIBLE);
+                typeBaby4.setVisibility(View.VISIBLE);
+                typeBaby5.setVisibility(View.VISIBLE);
+            }
+            else {
+                typeBaby.setVisibility(View.GONE);
+                typeBaby2.setVisibility(View.GONE);
+                typeBaby3.setVisibility(View.GONE);
+                typeBaby4.setVisibility(View.GONE);
+                typeBaby5.setVisibility(View.GONE);
+            }
+        }
 
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+        maleId.setText("");
     }
 
     public void writeData(){
 
         String id=animal_num.getText().toString();
-        NewAnimals newAnimal =new NewAnimals(animal_num.getText().toString(),type.getSelectedItem().toString(),Age.getSelectedItem().toString(), Age_res.getText().toString(),cow.getText().toString(),newcow.getText().toString(),oldcow.getText().toString()) ;
+        NewAnimals newAnimal=new NewAnimals(animal_num.getText().toString(),type.getSelectedItem().toString(),Age.getSelectedItem().toString(),Age_res.getText().toString(),status.getSelectedItem().toString(),maleId.getText().toString(),previousBirths.getSelectedItem().toString(),typeBaby.getSelectedItem().toString(),typeBaby2.getSelectedItem().toString(),typeBaby3.getSelectedItem().toString(),typeBaby4.getSelectedItem().toString(),typeBaby5.getSelectedItem().toString());
         ref.child("animalId").child(id).child("id").setValue(id);
         mAnimalsDatabaseReference.child("newAnimal").child(animal_num.getText().toString()).setValue(newAnimal);
     }

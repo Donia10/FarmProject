@@ -19,29 +19,36 @@ package com.example.farmproject;
 }
 public class NewAnimals {
 
-    public NewAnimals(String animalNumber, String animalType, String age, String ageText, String status1, String status2, String status3) {
+    private String animalNumber;
+    private String animalType;
+    private String age;
+    private String ageText;
+    private String status;
+    private String maleNumber;
+    private String previousBirth;
+    private String firstBirth;
+    private String secondBirth;
+    private String thirdBirth;
+    private String fourthBirth;
+    private String fifthBirth;
+
+    public NewAnimals() {
+    }
+
+    public NewAnimals(String animalNumber, String animalType, String age, String ageText, String status, String maleNumber, String previousBirth, String firstBirth, String secondBirth, String thirdBirth, String fourthBirth, String fifthBirth) {
         this.animalNumber = animalNumber;
         this.animalType = animalType;
         this.age = age;
         this.ageText = ageText;
-        this.status1 = status1;
-        this.status2 = status2;
-        this.status3 = status3;
+        this.status = status;
+        this.maleNumber = maleNumber;
+        this.previousBirth = previousBirth;
+        this.firstBirth = firstBirth;
+        this.secondBirth = secondBirth;
+        this.thirdBirth = thirdBirth;
+        this.fourthBirth = fourthBirth;
+        this.fifthBirth = fifthBirth;
     }
-
-    private String animalNumber;
-
-    private String animalType;
-
-    private String age;
-
-    private String ageText;
-
-    private String status1;
-
-    private String status2;
-
-    private String status3;
 
     public String getAnimalNumber() {
         return animalNumber;
@@ -75,16 +82,67 @@ public class NewAnimals {
         this.ageText = ageText;
     }
 
-    public String getStatus1() { return status1; }
+    public String getStatus() {
+        return status;
+    }
 
-    public void setStatus1(String status1) { this.status1 = status1; }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-    public String getStatus2() { return status2; }
+    public String getMaleNumber() {
+        return maleNumber;
+    }
 
-    public void setStatus2(String status2) { this.status2 = status2; }
+    public void setMaleNumber(String maleNumber) {
+        this.maleNumber = maleNumber;
+    }
 
-    public String getStatus3() { return status3;}
+    public String getPreviousBirth() {
+        return previousBirth;
+    }
 
-    public void setStatus3(String status3) { this.status3 = status3;}
+    public void setPreviousBirth(String previousBirth) {
+        this.previousBirth = previousBirth;
+    }
 
+    public String getFirstBirth() {
+        return firstBirth;
+    }
+
+    public void setFirstBirth(String firstBirth) {
+        this.firstBirth = firstBirth;
+    }
+
+    public String getSecondBirth() {
+        return secondBirth;
+    }
+
+    public void setSecondBirth(String secondBirth) {
+        this.secondBirth = secondBirth;
+    }
+
+    public String getThirdBirth() {
+        return thirdBirth;
+    }
+
+    public void setThirdBirth(String thirdBirth) {
+        this.thirdBirth = thirdBirth;
+    }
+
+    public String getFourthBirth() {
+        return fourthBirth;
+    }
+
+    public void setFourthBirth(String fourthBirth) {
+        this.fourthBirth = fourthBirth;
+    }
+
+    public String getFifthBirth() {
+        return fifthBirth;
+    }
+
+    public void setFifthBirth(String fifthBirth) {
+        this.fifthBirth = fifthBirth;
+    }
 }

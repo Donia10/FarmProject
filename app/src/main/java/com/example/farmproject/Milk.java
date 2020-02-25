@@ -1,5 +1,6 @@
 package com.example.farmproject;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,7 @@ public class Milk extends AppCompatActivity implements AdapterView.OnItemSelecte
     EditText fatText;
     EditText proteinText;
     Button add;
+    String animalId;
     //firebase instance object
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mAnimalsDatabaseReference;
@@ -47,6 +49,9 @@ public class Milk extends AppCompatActivity implements AdapterView.OnItemSelecte
         getSupportActionBar().setTitle("كمية إدرار اللبن");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setTitleTextColor(Color.WHITE);
+
+         Intent intent=getIntent();
+         animalId=intent.getStringExtra(AnimalsAdapter.EXTRA_TEXT);
 
         //spinner
         final Spinner spinner=findViewById(R.id.spinner);
@@ -127,8 +132,6 @@ public class Milk extends AppCompatActivity implements AdapterView.OnItemSelecte
 
     public void writeData(){
         AmountOfMilk amount=new AmountOfMilk(milkTheThirdTime.getText().toString(),milkTheSecondTime.getText().toString(),milkTheThirdTime.getText().toString(),fatText.getText().toString(),proteinText.getText().toString());
-        mAnimalsDatabaseReference.child("milk").child("1").setValue(amount);
-        mAnimalsDatabaseReference.child("milk").child("2").setValue(amount);
-
+        mAnimalsDatabaseReference.child("milk").child(animalId).setValue(amount);
     }
 }

@@ -8,6 +8,9 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String CHECK ="com.example.farmproject.CHECK";
+
     Button milk;
     Button farmAnimals;
     Button fortifications;
@@ -38,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         farmAnimals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivityFarmAnimals();
+                openActivityChooseId();
             }
         });
 
@@ -81,18 +84,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openActivityMilk() {
-        Intent intent = new Intent(this, Milk.class);
+        Intent intent = new Intent(this, FarmAnimals.class);
+        String milk="milk";
+        intent.putExtra(CHECK,milk);
         startActivity(intent);
 
     }
-    public void openActivityFarmAnimals() {
-        Intent intent = new Intent(this, FarmAnimals.class);
+    public void openActivityChooseId() {
+        Intent intent = new Intent(this, ChooseTypeId.class);
         startActivity(intent);
 
 
     }
     public void openActivityFortifications() {
-        Intent intent = new Intent(this, Fortifications.class);
+        Intent intent = new Intent(this, FarmAnimals.class);
+        String forti="fortification";
+        intent.putExtra(CHECK,forti);
         startActivity(intent);
 
     }
@@ -102,13 +109,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void openActivityMissedAnimal() {
-        Intent intent = new Intent(this, missedAnimal.class);
+        Intent intent = new Intent(this, FarmAnimals.class);
+        String missed="missedanimal";
+        intent.putExtra(CHECK,missed);
         startActivity(intent);
 
     }
 
     public void openActivityNewAnimal() {
-        Intent intent = new Intent(this, newAnimal.class);
+        Intent intent = new Intent(this,newAnimal.class);
         startActivity(intent);
 
     }
