@@ -1,5 +1,6 @@
 package com.example.farmproject;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -14,11 +15,11 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class missedAnimal extends AppCompatActivity {
+public class missedAnimal extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     Spinner missedtype;
     Button add;
-
+    String animalId;
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mAnimalsDatabaseReference;
 
@@ -28,45 +29,53 @@ public class missedAnimal extends AppCompatActivity {
         setContentView(R.layout.activity_missed_animal);
 
         //Toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.fortifications);
+        Toolbar toolbar= (Toolbar) findViewById(R.id.missedanimal);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("الحيوانات المفقودة");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setTitleTextColor(Color.WHITE);
 
 
+        Intent intent=getIntent();
+        animalId=intent.getStringExtra(AnimalsAdapter.EXTRA_TEXT);
+
         missedtype = findViewById(R.id.missedspinner);
         add = findViewById(R.id.addbtn);
-
         //firebase objects
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mAnimalsDatabaseReference = mFirebaseDatabase.getReference().child("animals");
 
-        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Spinner_items, android.R.layout.simple_spinner_item);
+        final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Spinner3_items, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         missedtype.setAdapter(adapter);
-        missedtype.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+        missedtype.setOnItemSelectedListener(this);
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 writeOnDatabase();
-
-
             }
         });
-    }
-
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        parent.getItemAtPosition(position);
     }
 
     public void writeOnDatabase()
     {
 
-        AnimalMissed missdanimal = new AnimalMissed(missedtype.getSelectedItem().toString());
-        mAnimalsDatabaseReference.child("missedAnimal").child("1").setValue(missdanimal);
+        AnimalMised animalMised=new AnimalMised(missedtype.getSelectedItem().toString());
+        mAnimalsDatabaseReference.child("MissedAnimal").child(animalId).setValue(animalMised);
 
+    }
+
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
     }
 }
+

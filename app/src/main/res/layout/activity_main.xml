@@ -19,6 +19,7 @@
         app:title="مزرعة أبقار حلابة"
         app:titleTextColor="@android:color/white">
 
+
     </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
@@ -27,14 +28,16 @@
         android:layout_height="match_parent"
         android:fillViewport="true"
         android:scrollbarStyle="outsideOverlay"
-        android:scrollbars="vertical">
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="167dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@android:dimen/app_icon_size"
-            android:background="@drawable/border"
+            android:padding="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -3,6 +3,8 @@ package com.example.farmproject;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -28,6 +30,7 @@ public class DataBaby extends AppCompatActivity {
     private TextView typeBaby;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference dRef;
+    private LinearLayout babyl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,14 +55,18 @@ public class DataBaby extends AppCompatActivity {
         babyWeight = (TextView) findViewById(R.id.baby_weight);
         typeOfOperation=findViewById(R.id.type_op);
         typeBaby=findViewById(R.id.type_baby);
+        babyl=findViewById(R.id.babyl);
 
         firebaseDatabase=FirebaseDatabase.getInstance();
         dRef=firebaseDatabase.getReference().child("animals").child("babyAnimal").child(babyID);
         dRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                NewBabyAnimal newBabyAnimal=dataSnapshot.getValue(NewBabyAnimal.class);
-                readBabyAnimal(newBabyAnimal);
+                if(dataSnapshot.exists()) {
+                    babyl.setVisibility(View.VISIBLE);
+                    NewBabyAnimal newBabyAnimal = dataSnapshot.getValue(NewBabyAnimal.class);
+                    readBabyAnimal(newBabyAnimal);
+                }
             }
 
             @Override
@@ -67,7 +74,6 @@ public class DataBaby extends AppCompatActivity {
 
             }
         });
-
 
     }
 

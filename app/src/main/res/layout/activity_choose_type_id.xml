@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -25,8 +26,7 @@
         android:background="@drawable/border"
         android:layout_margin="@android:dimen/app_icon_size"
         android:padding="10dp"
-        android:orientation="horizontal"
-        android:layout_centerVertical="true">
+        android:orientation="horizontal">
         <Button
             android:id="@+id/CAnimalId"
             android:layout_width="wrap_content"
@@ -34,9 +34,10 @@
             android:layout_weight="1"
             android:background="@color/blue"
             android:textColor="@android:color/white"
-            android:gravity="center_horizontal"
-            android:layout_marginHorizontal="@dimen/fui_auth_method_button_margin"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/fui_auth_method_button_margin"
             android:text="رقم الحيوان" />
+
         <Button
             android:id="@+id/CBabyId"
             android:layout_width="wrap_content"
@@ -45,7 +46,7 @@
             android:background="@color/blue"
             android:textColor="@android:color/white"
             android:layout_gravity="center_horizontal"
-            android:layout_marginHorizontal="@dimen/fui_auth_method_button_margin"
+            android:layout_margin="@dimen/fui_auth_method_button_margin"
             android:text="رقم المولود" />
 
     </LinearLayout>

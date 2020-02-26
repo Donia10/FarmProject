@@ -1,5 +1,6 @@
 package com.example.farmproject;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,7 @@ public class Pollination extends AppCompatActivity implements AdapterView.OnItem
     Spinner number_poll;
     Spinner result;
     Button add;
+    String animalId;
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mAnimalsDatabaseReference;
@@ -32,6 +34,9 @@ public class Pollination extends AppCompatActivity implements AdapterView.OnItem
         result=findViewById(R.id.result_poll);
         add=findViewById(R.id.addbtn);
 
+        Intent intent=getIntent();
+        animalId=intent.getStringExtra(AnimalsAdapter.EXTRA_TEXT);
+
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mAnimalsDatabaseReference = mFirebaseDatabase.getReference().child("animals");
 
@@ -44,7 +49,7 @@ public class Pollination extends AppCompatActivity implements AdapterView.OnItem
         toolbar.setTitleTextColor(Color.WHITE);
 
        final ArrayAdapter<CharSequence> newadapter = ArrayAdapter.createFromResource(this, R.array.Spinner7_items, android.R.layout.simple_spinner_item);
-       newadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        newadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         number_poll.setAdapter(newadapter);
         number_poll.setOnItemSelectedListener(this);
 
@@ -90,7 +95,7 @@ public class Pollination extends AppCompatActivity implements AdapterView.OnItem
 
    public void writeOnDatabase(){
         Pllinations pollinations=new  Pllinations(number_poll.getSelectedItem().toString(), result.getSelectedItem().toString());
-        mAnimalsDatabaseReference.child("pollinations").child("1").setValue(pollinations);
+        mAnimalsDatabaseReference.child("pollinations").child(animalId).setValue(pollinations);
 
     }
 }

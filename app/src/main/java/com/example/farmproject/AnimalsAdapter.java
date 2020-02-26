@@ -82,6 +82,11 @@ public class AnimalsAdapter extends RecyclerView.Adapter <AnimalsAdapter.Animals
                        intent = new Intent(context, missedAnimal.class);
                        intent.putExtra(EXTRA_TEXT, s);
                        context.startActivity(intent);
+                   }else if (check.equals("pollination")) {
+                       Intent intent;
+                       intent = new Intent(context, Pollination.class);
+                       intent.putExtra(EXTRA_TEXT, s);
+                       context.startActivity(intent);
                    }
                }
                else

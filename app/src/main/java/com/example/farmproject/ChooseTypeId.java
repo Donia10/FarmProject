@@ -1,10 +1,13 @@
 package com.example.farmproject;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class ChooseTypeId extends AppCompatActivity {
 
@@ -14,10 +17,9 @@ public class ChooseTypeId extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_type_id);
-        /*
 
         //toolbar
-        Toolbar toolbar_animals = (Toolbar) findViewById(R.id.ChooseTl);
+        androidx.appcompat.widget.Toolbar toolbar_animals = (Toolbar) findViewById(R.id.ChooseTl);
         setSupportActionBar(toolbar_animals);
         getSupportActionBar().setTitle("قطيع المزرعة");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -41,8 +43,8 @@ public class ChooseTypeId extends AppCompatActivity {
             }
         });
 
-        **/
     }
+
     private void openActivityBabyAnimalId(){
         Intent intent=new Intent(this,BabyAnimalId.class);
         startActivity(intent);
@@ -51,4 +53,5 @@ public class ChooseTypeId extends AppCompatActivity {
         Intent intent=new Intent(this,FarmAnimals.class);
         startActivity(intent);
     }
+
 }

@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Pollination"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,25 +22,31 @@
         </activity>
         <activity
             android:name=".DataAnimals"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".ChooseTypeId" />
+        <activity android:name=".DataBaby"
+            android:parentActivityName=".ChooseTypeId"/>
         <activity
             android:name=".Fortifications"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".FarmAnimals" />
         <activity
             android:name=".BabyAnimal_Activity"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".BabyAnimalId"
+            android:parentActivityName=".ChooseTypeId"/>
         <activity
             android:name=".FarmAnimals"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Milk"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".FarmAnimals" />
         <activity
             android:name=".missedAnimal"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".FarmAnimals" />
         <activity
             android:name=".newAnimal"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".ChooseTypeId"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -30,6 +30,9 @@ public class Pllinations {
         this.result = result;
     }
 
+    public Pllinations() {
+    }
+
     public String getPollinationNumber() {
         return pollinationNumber;
     }

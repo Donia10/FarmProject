@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:layout_centerVertical="true"
     tools:context=".DataAnimals">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tlData"
         android:layout_width="match_parent"
@@ -17,8 +18,99 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
 
     </androidx.appcompat.widget.Toolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:scrollbarStyle="outsideOverlay"
+        android:fillViewport="true">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/annimal"
+        android:visibility="gone"
+        android:background="@drawable/border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fui_auth_method_button_drawablePadding"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/animalid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:id="@+id/animaltypee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:id="@+id/maleid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:id="@+id/noPrevious"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:id="@+id/statusan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:id="@+id/fBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:id="@+id/sBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:id="@+id/tBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:id="@+id/foBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:id="@+id/fifBirth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/mlk"
+        android:visibility="gone"
         android:background="@drawable/border"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,6 +124,7 @@
             android:padding="5dp"
             android:layout_margin="5dp">
         </TextView>
+
         <TextView
             android:id="@+id/second"
             android:layout_width="match_parent"
@@ -64,6 +157,8 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/fort"
+        android:visibility="gone"
         android:background="@drawable/border"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -87,5 +182,50 @@
         </TextView>
 
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/poll"
+        android:background="@drawable/border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_margin="@dimen/fui_auth_method_button_drawablePadding"
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+        <TextView
+            android:id="@+id/numberpollination"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp">
+        </TextView>
+        <TextView
+            android:id="@+id/resultPoll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp">
+        </TextView>
 
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/missed"
+        android:background="@drawable/border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_margin="@dimen/fui_auth_method_button_drawablePadding"
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+        <TextView
+            android:id="@+id/misedAnimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp">
+        </TextView>
+    </LinearLayout>
+</LinearLayout>
+    </ScrollView>
 </LinearLayout>

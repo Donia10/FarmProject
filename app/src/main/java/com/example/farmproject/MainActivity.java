@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,10 +20,22 @@ public class MainActivity extends AppCompatActivity {
     Button addnewanimal;
     Button pollinations;
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish(); // close this activity as oppose to navigating up
+
+        return false;
+    }
+
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.activity_main);
-//objects
+
+        Toolbar toolbar_animals = (Toolbar) findViewById(R.id.toolbar_home);
+        setSupportActionBar(toolbar_animals);
+       this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        this.getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close_black_24dp);
+        //objects
         milk=findViewById(R.id.milk);
         addBabyAniaml=findViewById(R.id.add_baby);
         farmAnimals=findViewById(R.id.farm_animals);
@@ -123,7 +136,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openActivitypollination(){
-        Intent intent = new Intent(this,Pollination.class);
+        Intent intent = new Intent(this,FarmAnimals.class);
+        String pollination="pollination";
+        intent.putExtra(CHECK,pollination);
         startActivity(intent);
     }
 

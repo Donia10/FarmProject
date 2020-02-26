@@ -29,15 +29,6 @@
         android:layout_centerVertical="true">
 
 
-       <!-- <SearchView
-            android:id="@+id/animalnum"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/border"
-            android:ems="10"
-            android:hint="ادخل رقم الحيوان"
-            android:padding="5dp" /> -->
         <Spinner
             android:id="@+id/missedspinner"
             android:layout_width="match_parent"
