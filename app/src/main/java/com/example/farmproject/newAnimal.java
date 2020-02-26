@@ -149,6 +149,7 @@ public class newAnimal extends AppCompatActivity  implements AdapterView.OnItemS
                 typeBaby3.setVisibility(View.GONE);
                 typeBaby4.setVisibility(View.GONE);
                 typeBaby5.setVisibility(View.GONE);
+
             }
             else if (position == 2) {
                 typeBaby.setVisibility(View.VISIBLE);
