@@ -60,7 +60,7 @@
             android:inputType="textPersonName"
             android:padding="5dp"
             android:layout_margin="5dp"
-            android:text="رقم المولود" />
+            android:hint="رقم المولود" />
 
         <Spinner
             android:id="@+id/typesurgion"

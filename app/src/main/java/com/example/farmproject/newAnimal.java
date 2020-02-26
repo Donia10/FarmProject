@@ -2,6 +2,8 @@ package com.example.farmproject;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -57,6 +59,28 @@ public class newAnimal extends AppCompatActivity  implements AdapterView.OnItemS
         typeBaby3=findViewById(R.id.typeBaby3);
         typeBaby4=findViewById(R.id.typeBaby4);
         typeBaby5=findViewById(R.id.typeBaby5);
+
+        animal_num.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (animal_num.getText().toString()=="") {
+                    animal_num.setError("Enter FirstName");
+
+                } else {
+                    animal_num.setError(null);
+                }
+            }
+        });
 
         //firebase object
         mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -121,7 +145,8 @@ public class newAnimal extends AppCompatActivity  implements AdapterView.OnItemS
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               writeData();
+                writeData();
+
 
             }
         });
