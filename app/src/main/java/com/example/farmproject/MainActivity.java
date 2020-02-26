@@ -33,8 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar_animals = (Toolbar) findViewById(R.id.toolbar_home);
         setSupportActionBar(toolbar_animals);
-       this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        this.getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close_black_24dp);
+
         //objects
         milk=findViewById(R.id.milk);
         addBabyAniaml=findViewById(R.id.add_baby);
