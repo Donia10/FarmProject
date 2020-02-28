@@ -71,8 +71,7 @@ public class FarmAnimals extends AppCompatActivity {
 
 
             @Override
-            public void afterTextChanged(Editable s) {
-                filter(s.toString());
+            public void afterTextChanged(Editable s) { filter(s.toString());
             }
         });
 
@@ -138,25 +137,34 @@ public class FarmAnimals extends AppCompatActivity {
         });
 
 
-
         recyclerView=findViewById(R.id.recyclerView);
         animalsAdapter=new AnimalsAdapter(ss,this,check);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(animalsAdapter);
 
-
     }
-
+    /*
+    private void filters(String text){
+        ArrayList<String> filteredList=new ArrayList<>();
+        for(String item :far){
+            if(item.getAnimal_id().toLowerCase().contains(text.toLowerCase())){
+                filteredList.add(item);
+            }
+        }
+        animalsAdapter.filterList(filteredList);
+    }**/
 
     private void filter(String text){
-        ArrayList<FarmAnimal> filteredList=new ArrayList<>();
-        for(FarmAnimal item :f){
-           if(item.getAnimal_id().toLowerCase().contains(text.toLowerCase())){
+        ArrayList<String> filteredList=new ArrayList<>();
+        for(String item :ss){
+           if(item.toLowerCase().contains(text.toLowerCase())){
                filteredList.add(item);
            }
         }
         animalsAdapter.filterList(filteredList);
     }
+
+
 
 
 

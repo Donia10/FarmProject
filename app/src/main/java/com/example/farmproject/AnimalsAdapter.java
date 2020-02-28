@@ -60,7 +60,7 @@ public class AnimalsAdapter extends RecyclerView.Adapter <AnimalsAdapter.Animals
                 context.startActivity(intent);
             }
         });**/
-         final String s=f.get(position);
+       final String s=f.get(position);
        holder.button.setText(s);
        holder.button.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -108,8 +108,8 @@ public class AnimalsAdapter extends RecyclerView.Adapter <AnimalsAdapter.Animals
     }
 
 
-    public void filterList(ArrayList<FarmAnimal> filteredList){
-        farmAnimal=filteredList;
+    public void filterList(ArrayList<String> filteredList){
+        f=filteredList;
         notifyDataSetChanged();
     }
 
